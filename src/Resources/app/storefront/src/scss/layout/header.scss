@@ -1,0 +1,19 @@
+.header-wrapper{
+    background: #000;
+    .header-logo-main{
+        max-width: 200px;
+        img{
+            width: 100%;
+        }
+    }
+    .header-cart-total{
+        color: #fff;
+    }
+    .header-actions-col{
+        .icon{
+            width: 30px;
+            height: 30px;
+            color: #fff;
+        }
+    }
+}
