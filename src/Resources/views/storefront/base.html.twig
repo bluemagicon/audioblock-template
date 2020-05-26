@@ -53,17 +53,12 @@
 
             {% block base_main_inner %}
                 <div class="container">
-                    {% block base_main_container %}
-                        <div class="container-main">
-                            {% block base_breadcrumb %}
-                                {% if breadcrumbList %}
-                                    {% sw_include '@Storefront/storefront/layout/breadcrumb.html.twig' %}
-                                {% endif %}
-                            {% endblock %}
-
-                            {% block base_content %}{% endblock %}
-                        </div>
+                    {% block base_breadcrumb %}
+                        {% if breadcrumbList %}
+                            {% sw_include '@Storefront/storefront/layout/breadcrumb.html.twig' %}
+                        {% endif %}
                     {% endblock %}
+                    {% block base_content %}{% endblock %}
                 </div>
             {% endblock %}
         </main>
