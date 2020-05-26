@@ -1,11 +1,13 @@
-
-@media (min-width: 768px){
-    .main-navigation-link{
-        color: #fff;
-        &.active{
-          color: #fff;
-            .main-navigation-link-text{
-                border-color: #fff;
+@media (min-width: 768px) {
+    .main-navigation {
+        background: #000;
+        .main-navigation-link {
+            color: #fff;
+            &.active {
+                color: #fff;
+                .main-navigation-link-text {
+                    border-color: #fff;
+                }
             }
         }
     }
