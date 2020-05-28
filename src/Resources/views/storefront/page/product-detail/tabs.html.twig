@@ -2,32 +2,99 @@
 
 
 {% block page_product_detail_tabs_navigation_description %}
-    {{ parent() }}
-    {% if page.product.customFields.custom_training_text %}
-        <li class="nav-item">
-            <a class="nav-link product-detail-tab-navigation-link"
-               id="additional-tab"
-               data-toggle="tab"
-               data-offcanvas-tabs="true"
-               href="#additional-tab-pane"
-               role="tab"
-               aria-controls="description-tab-pane"
-               aria-selected="false">
-                Additional Data
-            </a>
-        </li>
-    {% endif %}
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="highlights-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#highlights-tab-desc"
+           role="tab"
+           aria-controls="description-tab-pane"
+           aria-selected="true">
+            Highlights
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="technical-data-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#technical-data-tab-desc"
+           role="tab"
+           aria-controls="description-tab-pane"
+           aria-selected="false">
+            Technische Daten
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="delivery-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#technical-data-tab-desc"
+           role="tab"
+           aria-controls="delivery-tab-pane"
+           aria-selected="false">
+            Lieferumfang
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="reviews-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#technical-data-tab-desc"
+           role="tab"
+           aria-controls="reviews-tab-pane"
+           aria-selected="false">
+            Bewertungen
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="service-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#technical-data-tab-desc"
+           role="tab"
+           aria-controls="service-tab-pane"
+           aria-selected="false">
+            Service
+        </a>
+    </li>
+    {% block page_product_detail_tabs_navigation_review %}{% endblock %}
 {% endblock %}
 
 
 {% block page_product_detail_tabs_content_description %}
-    {{ parent() }}
-    {% if page.product.customFields.custom_training_text %}
-        <div class="tab-pane fade show"
-             id="additional-tab-pane"
-             role="tabpanel"
-             aria-labelledby="additional-tab">
-            {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/additional.html.twig' %}
-        </div>
-    {% endif %}
+    <div class="tab-pane fade show active"
+         id="highlights-tab-desc"
+         role="tabpanel"
+         aria-labelledby="highlights-tab">
+        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/highlights.html.twig' %}
+    </div>
+    <div class="tab-pane fade show"
+         id="technical-data-tab-desc"
+         role="tabpanel"
+         aria-labelledby="technical-data-tab">
+
+    </div>
+    <div class="tab-pane fade show"
+         id="delivery-tab-desc"
+         role="tabpanel"
+         aria-labelledby="delivery-data-tab">
+
+    </div>
+    <div class="tab-pane fade show"
+         id="reviews-tab-desc"
+         role="tabpanel"
+         aria-labelledby="reviews-data-tab">
+
+    </div>
+    <div class="tab-pane fade show"
+         id="service-tab-desc"
+         role="tabpanel"
+         aria-labelledby="service-data-tab">
+
+    </div>
 {% endblock %}

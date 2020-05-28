@@ -120,4 +120,142 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'page/search/search';
 
 
+.container-main{
+    padding: 0;
+}
+.breadcrumb{
+    display: none;
+}
+/*** TYPO & BUTTONS ***/
+.button-1{
+    padding: 10px 25px 10px 50px;
+    background: #565656;
+    color: #fff;
+    border-radius: 20px;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.button-1::before{
+    content: '';
+    display: block;
+    background-color: #E5005B;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-image: url('../assets/img/button-1-arrow-right.svg');
+    background-size: 20px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-1:hover{
+    background: #7a7a7a;
+    color: #fff;
+    text-decoration: none;
+}
 
+
+/*** INTRO-WRAPPER ***/
+.intro-wrapper{
+    width: 950px;
+    max-width: 90%;
+    margin: 0 auto;
+
+    h1{
+        text-transform: uppercase;
+    }
+    h6{
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+    hr{
+        border: 0 !important;
+        max-width: inherit !important;
+        width: 200px;
+        height: 1px;
+        background: rgba(0,0,0,0.8);
+        margin: 30px 0;
+    }
+}
+
+/*** PRODUCT-LISTING ***/
+.cms-element-product-listing-actions{
+    display: none;
+}
+.cms-element-product-listing .cms-listing-row{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.cms-element-product-listing .cms-listing-col{
+    margin-bottom: 40px;
+}
+.cms-element-product-listing .cms-listing-col:nth-child(2n) .product-box .card-body{
+    flex-direction: row-reverse !important;
+
+    .product-info{
+        margin-right: 50px;
+        margin-left: 0;
+    }
+}
+.product-box{
+    border: 0;
+
+    .card-body{
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .product-image-wrapper{
+            height: auto;
+            width: 55%;
+            margin-bottom: 0;
+            flex-basis: unset;
+            flex-grow: unset;
+            flex-shrink: unset;
+
+            .product-image-link{
+                .product-image{
+                    max-height: inherit !important;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+        .product-info{
+            width: 40%;
+            max-width: 480px;
+            margin-left: 50px;
+
+            .product-rating{
+                display: none;
+            }
+            .product-name{
+                text-transform: uppercase;
+                color: #000;
+                font-size: 22px;
+            }
+            .listing-button-price-wrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+
+                .product-price-unit{
+                    display: none;
+                }
+                .product-price{
+                    margin-top: 0px;
+                }
+                .product-price-info{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
