@@ -119,12 +119,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 
 //@import 'page/search/search';
 
+body{
 
-.container-main{
-    padding: 0;
-}
-.breadcrumb{
-    display: none;
 }
 /*** TYPO & BUTTONS ***/
 .button-1{
@@ -147,7 +143,7 @@ https://sass-guidelin.es/#the-7-1-pattern
     left: 3px;
     transform: translateY(-50%);
     border-radius: 50%;
-    background-image: url('../assets/img/button-1-arrow-right.svg');
+    /*background-image: url('../assets/img/button-1-arrow-right.svg');*/
     background-size: 20px auto;
     background-position: center;
     background-repeat: no-repeat;
