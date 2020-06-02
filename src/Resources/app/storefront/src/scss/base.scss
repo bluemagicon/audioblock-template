@@ -122,7 +122,28 @@ https://sass-guidelin.es/#the-7-1-pattern
 body{
 
 }
+.img-wrapper img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
 /*** TYPO & BUTTONS ***/
+html, body{
+    font-family: 'source-sans-pro', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.main-navigation-link{
+    font-family: bebas-neue, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
 .button-1{
     padding: 10px 25px 10px 50px;
     background: #565656;
@@ -154,6 +175,76 @@ body{
     text-decoration: none;
 }
 
+/*** CONTACT-SIDEBAR ***/
+.contact-sidebar{
+    background: #000;
+    position: fixed;
+    top: 25%;
+    right: -508px;
+    color: #fff;
+    padding: 20px 275px 20px 20px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    z-index: 999;
+    transition: all .5s;
+
+    ul{
+        padding: 0;
+        margin-bottom: 15px;
+        list-style: none;
+        padding-left: 75px;
+        position: relative;
+
+        li{
+            strong{
+                text-transform: uppercase;
+                font-size: 22px;
+                font-family: bebas-neue, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+            }
+            a{
+                color: #fff;
+            }
+            span{
+                display: inline-block;
+                width: 70px;
+            }
+        }
+    }
+    ul::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 14px;
+        left: 0;
+        height: 45px;
+        width: 45px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: all .5s;
+    }
+    ul.contact::before{
+        background-image: url('../assets/img/phone.svg');
+    }
+    ul.questions::before{
+        background-image: url('../assets/img/question.svg');
+    }
+    ul.reachability::before{
+        background-image: url('../assets/img/watch.svg');
+    }
+    ul:last-child{
+        margin: 0;
+    }
+}
+.contact-sidebar:hover{
+    right: 0px;
+    ul::before{
+        top: 6px;
+        height: 40px;
+        width: 40px;
+    }
+}
 
 /*** INTRO-WRAPPER ***/
 .intro-wrapper{
@@ -197,6 +288,15 @@ body{
         margin-right: 50px;
         margin-left: 0;
     }
+    .product-image-wrapper{
+        .product-image-link{
+            .product-image{
+                margin-right: 0;
+                margin-left: 50px;
+            }
+        }
+    }
+
 }
 .product-box{
     border: 0;
@@ -220,6 +320,8 @@ body{
                     max-height: inherit !important;
                     height: auto;
                     width: 100%;
+                    overflow: hidden;
+                    margin-right: 50px;
                 }
             }
         }
@@ -250,6 +352,49 @@ body{
                 }
                 .product-price-info{
                     margin: 0;
+                }
+            }
+        }
+    }
+}
+/*** FOOTER ***/
+.footer-main{
+    background: #000;
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.5);
+    padding: 30px 0;
+
+    .footer-logo-wrapper{
+        img{
+            width: 250px;
+        }
+    }
+
+    .footer-col{
+        ul{
+            list-style: none;
+            margin-bottom: 15px;
+            padding: 0;
+        }
+        ul:last-child{
+            margin-bottom: 0;
+        }
+        h4,
+        a,
+        li{
+            color: #fff;
+        }
+    }
+    .footer-socials{
+        .icons-wrapper{
+            display: flex;
+            a{
+                text-align: center;
+                margin-right: 10px;
+
+                .img-wrapper {
+                    width: 35px;
+                    display: block;
+                    margin: 0 auto 3px auto;
                 }
             }
         }
