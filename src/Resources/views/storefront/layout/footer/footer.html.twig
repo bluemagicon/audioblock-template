@@ -1,2 +1,44 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
+{% block layout_footer_inner_container %}
+    <div class="row">
+        <div class="footer-logo-wrapper footer-col col-auto">
+            <img src="{{ asset('assets/img/logo-audioblock-negativ.svg', '@Audioblock') }}">
+        </div>
+        <div class="footer-customers-menu footer-col col-auto">
+            <h4>Für Kunden</h4>
+        </div>
+        <div class="footer-legal-menu footer-col col-auto">
+            <h4>Rechtliches</h4>
+        </div>
+        <div class="footer-contact footer-col col-auto">
+            <h4>Kontakt</h4>
+            <ul>
+                <li>Audioblock GmbH</li>
+                <li>Auf der Striepe 3a</li>
+                <li>27798 Hude</li>
+            </ul>
+            <ul>
+                <li><a href="mailto:block@audioblock.com">block@audioblock.com</a></li>
+                <li><a href="tel:+49448492009010">+49 (0) 4484 - 920 090 10</a></li>
+            </ul>
+        </div>
+        <div class="footer-socials footer-col col-auto">
+            <h4>Social Media</h4>
+            <div class="icons-wrapper">
+                <a href="https://www.instagram.com/audioblock_official/?hl=de" target="_blank" class="social-icon-wrapper">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets/img/instagram.svg', '@Audioblock') }}">
+                    </div>
+                    Instagram
+                </a>
+                <a href="https://www.facebook.com/realaudioblock/" target="_blank" class="social-icon-wrapper">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets/img/facebook.svg', '@Audioblock') }}">
+                    </div>
+                    Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
