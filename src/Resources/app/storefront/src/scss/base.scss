@@ -166,7 +166,7 @@ h6{
     left: 3px;
     transform: translateY(-50%);
     border-radius: 50%;
-    /*background-image: url('../assets/img/button-1-arrow-right.svg');*/
+    background-image: url('../assets/img/button-1-arrow-right.svg');
     background-size: 20px auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -175,6 +175,9 @@ h6{
     background: #7a7a7a;
     color: #fff;
     text-decoration: none;
+}
+.button-1.add-to-cart{
+    border: 0 !important;
 }
 
 /*** CONTACT-SIDEBAR ***/
@@ -366,6 +369,10 @@ h6{
             width: 250px;
         }
     }
+    .row{
+        justify-content: space-between !important;
+    }
+
     .footer-col{
         ul{
             list-style: none;
@@ -435,4 +442,22 @@ h6{
             display: none;
         }
     }
+}
+/*** PRODUCT-DETAIL ***/
+.product-detail-main{
+    align-items: center;
+}
+.product-detail-name-container{
+    padding: 0 !important;
+}
+.product-detail-manufacturer{
+    display: none;
+}
+.total-price{
+    font-size: 26px;
+    font-weight: 700;
+    display: block;
+}
+.product-detail-tax-link{
+    color: #4a545b;
 }
