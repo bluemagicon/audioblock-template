@@ -119,9 +119,6 @@ https://sass-guidelin.es/#the-7-1-pattern
 
 //@import 'page/search/search';
 
-body{
-
-}
 .img-wrapper img{
     width: 100%;
     height: auto;
@@ -131,17 +128,22 @@ body{
 html, body{
     font-family: 'source-sans-pro', sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 1rem;
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.main-navigation-link{
+h6{
     font-family: bebas-neue, sans-serif;
     font-style: normal;
+    font-weight: 400;
+    color: $headline-color;
+}
+.main-navigation-link{
+    font-family: bebas-neue, sans-serif;
     font-weight: 400;
 }
 .button-1{
@@ -179,21 +181,18 @@ h6,
 .contact-sidebar{
     background: #000;
     position: fixed;
-    top: 25%;
+    top: 250px;
     right: -508px;
     color: #fff;
     padding: 20px 275px 20px 20px;
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
     z-index: 999;
     transition: all .5s;
-
     ul{
-        padding: 0;
+        padding: 0 0 0 75px;
         margin-bottom: 15px;
         list-style: none;
-        padding-left: 75px;
         position: relative;
-
         li{
             strong{
                 text-transform: uppercase;
@@ -251,22 +250,22 @@ h6,
     width: 950px;
     max-width: 90%;
     margin: 0 auto;
-
     h1{
         text-transform: uppercase;
+        font-size: 3rem;
     }
-    h6{
+    h3{
         text-transform: uppercase;
-        font-weight: 100;
-        margin-bottom: 0;
+        color: $secondary-color;
     }
     hr{
-        border: 0 !important;
+        /*border: 0 !important;
         max-width: inherit !important;
         width: 200px;
         height: 1px;
         background: rgba(0,0,0,0.8);
-        margin: 30px 0;
+        margin: 30px 0;*/
+        display: none;
     }
 }
 
@@ -298,15 +297,15 @@ h6,
     }
 
 }
+
+/*** PRODUCT-BOX ***/
 .product-box{
     border: 0;
-
     .card-body{
         padding: 0;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
         .product-image-wrapper{
             height: auto;
             width: 55%;
@@ -329,7 +328,6 @@ h6,
             width: 40%;
             max-width: 480px;
             margin-left: 50px;
-
             .product-rating{
                 display: none;
             }
@@ -337,6 +335,7 @@ h6,
                 text-transform: uppercase;
                 color: #000;
                 font-size: 22px;
+
             }
             .listing-button-price-wrapper{
                 display: flex;
@@ -362,13 +361,11 @@ h6,
     background: #000;
     box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.5);
     padding: 30px 0;
-
     .footer-logo-wrapper{
         img{
             width: 250px;
         }
     }
-
     .footer-col{
         ul{
             list-style: none;
@@ -382,6 +379,7 @@ h6,
         a,
         li{
             color: #fff;
+
         }
     }
     .footer-socials{
@@ -397,6 +395,44 @@ h6,
                     margin: 0 auto 3px auto;
                 }
             }
+        }
+    }
+}
+/*** INTRO-TEXT ***/
+.cms-block-text-hero{
+    max-width: 800px;
+    margin: 0 auto;
+    .cms-element-text {
+        h1{
+            font-size: 3rem;
+            margin-bottom: 30px;
+            position: relative;
+            i{
+                background: #fff;
+                position: relative;
+                z-index: 9;
+                padding: 0 20px;
+                font-style: normal;
+            }
+        }
+        h1:after{
+            content: "";
+            position: absolute;
+            background: $primary-color;
+            width: 100%;
+            height: 1px;
+            left: 0px;
+            top: 20px;
+        }
+        h3{
+            color: $secondary-color;
+            font-family: 'source-sans-pro', sans-serif;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        hr{
+            display: none;
         }
     }
 }
