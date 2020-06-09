@@ -302,58 +302,60 @@ h6{
 }
 
 /*** PRODUCT-BOX ***/
-.product-box{
-    border: 0;
-    .card-body{
-        padding: 0;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        .product-image-wrapper{
-            height: auto;
-            width: 55%;
-            margin-bottom: 0;
-            flex-basis: unset;
-            flex-grow: unset;
-            flex-shrink: unset;
+.cms-listing-col{
+    .product-box{
+        border: 0;
+        .card-body{
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .product-image-wrapper{
+                height: auto;
+                width: 55%;
+                margin-bottom: 0;
+                flex-basis: unset;
+                flex-grow: unset;
+                flex-shrink: unset;
 
-            .product-image-link{
-                .product-image{
-                    max-height: inherit !important;
-                    height: auto;
-                    width: 100%;
-                    overflow: hidden;
-                    margin-right: 50px;
+                .product-image-link{
+                    .product-image{
+                        max-height: inherit !important;
+                        height: auto;
+                        width: 100%;
+                        overflow: hidden;
+                        margin-right: 50px;
+                    }
                 }
             }
-        }
-        .product-info{
-            width: 40%;
-            max-width: 480px;
-            margin-left: 50px;
-            .product-rating{
-                display: none;
-            }
-            .product-name{
-                text-transform: uppercase;
-                color: #000;
-                font-size: 22px;
-
-            }
-            .listing-button-price-wrapper{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 20px;
-
-                .product-price-unit{
+            .product-info{
+                width: 40%;
+                max-width: 480px;
+                margin-left: 50px;
+                .product-rating{
                     display: none;
                 }
-                .product-price{
-                    margin-top: 0px;
+                .product-name{
+                    text-transform: uppercase;
+                    color: #000;
+                    font-size: 22px;
+
                 }
-                .product-price-info{
-                    margin: 0;
+                .listing-button-price-wrapper{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    .product-price-unit{
+                        display: none;
+                    }
+                    .product-price{
+                        margin-top: 0px;
+                    }
+                    .product-price-info{
+                        margin: 0;
+                    }
                 }
             }
         }
