@@ -517,3 +517,43 @@ h6{
 .shopping-cart{
     background: red;
 }
+
+/*** PLUGIN: MERCHANT-FINDER ***/
+.cms-element-moorl-merchant-finder .moorl-merchant-finder-result-item .highlight{
+    color: $secondary-color;
+    opacity: 1;
+    background: #000;
+    font-family: $headline-font;
+    font-size: 1.3rem;
+}
+
+/*** PLUGIN: SLIDER***/
+.hero-slider .hero-slider-headline{
+    font-family: $headline-font !important;
+}
+
+/*** HOME: KATEGORIEN ***/
+.home-categories{
+    a.category-box{
+        position: relative;
+        display: block;
+        box-shadow: 1px 1px 6px #3e3e3e;
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            font-family: "bebas-neue", sans-serif;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 1.4rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+
+
