@@ -176,9 +176,11 @@ h6{
     color: #fff;
     text-decoration: none;
 }
-.button-1.add-to-cart{
+.button-1.add-to-cart {
     border: 0 !important;
 }
+/*** HEADER ***/
+
 
 /*** CONTACT-SIDEBAR ***/
 .contact-sidebar{
@@ -511,4 +513,38 @@ h6{
 }
 .product-detail-review-list hr{
     display: none;
+}
+
+/*** SHOPPING CART ***/
+.custom-close-button{
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    display: flex;
+    align-items: center;
+    background: #000;
+
+    .close-button{
+        display: block;
+        height: 50px;
+        width: 50px;
+        position: relative;
+
+        label{
+            color: #fff;
+        }
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            height: 2px;
+            width: 30px;
+            background: #000;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        span:nth-child(2){
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
 }
