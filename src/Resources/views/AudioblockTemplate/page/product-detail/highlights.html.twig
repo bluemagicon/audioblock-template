@@ -9,12 +9,7 @@
             </div>
             <div class="col-lg-6">
 
-                {% set imgId = page.product.customFields.custom_highlights_image %}
-                {% set mediaCollection = searchMedia([imgId], context.context) %}
-                {% set imgMedia = mediaCollection.get(imgId) %}
-                <div class="img-wrapper">
-                    <img src="{{ imgMedia.url }}" alt="{{ imgMedia.fileName }}" />
-                </div>
+
 
             </div>
         </div>
