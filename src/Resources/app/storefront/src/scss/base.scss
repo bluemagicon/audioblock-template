@@ -119,6 +119,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 
 //@import 'page/search/search';
 
+
 .img-wrapper img{
     width: 100%;
     height: auto;
@@ -179,8 +180,25 @@ h6{
 .button-1.add-to-cart {
     border: 0 !important;
 }
-/*** HEADER ***/
+.top-bar-nav a:hover,
+.top-bar-nav button:hover{
+    color: #fff !important;
+    text-decoration: underline;
+}
+.top-bar-nav .show a,
+.top-bar-nav .show button{
+    color: #fff !important;
+    text-decoration: underline;
+}
 
+/*** HEADER ***/
+.header-logo-main-link{
+    img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
 
 /*** CONTACT-SIDEBAR ***/
 .contact-sidebar{
@@ -249,7 +267,18 @@ h6{
         width: 40px;
     }
 }
-
+/*** STARTSEITE ***/
+.product-slider-item{
+    .product-price-unit{
+        display: none !important;
+    }
+    .product-description{
+        height: 72px !important;
+    }
+    .product-price-info{
+        margin-top: 25px !important;
+    }
+}
 /*** INTRO-WRAPPER ***/
 .intro-wrapper{
     width: 950px;
