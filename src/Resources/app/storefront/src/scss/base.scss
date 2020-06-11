@@ -180,6 +180,38 @@ h6{
 .button-1.add-to-cart {
     border: 0 !important;
 }
+.hero-slider-cta-btn{
+    padding: 6px 20px 6px 45px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border-radius: 25px;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+}
+.hero-slider-cta-btn::before{
+    content: '';
+    display: block;
+    background-color: $secondary-color;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-image: url('../assets/img/button-1-arrow-right.svg');
+    background-size: 18px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero-slider-cta-btn:hover{
+    background: $primary-color;
+    color: #fff;
+    text-decoration: none;
+}
+
 .top-bar-nav a:hover,
 .top-bar-nav button:hover{
     color: #fff !important;
@@ -228,7 +260,6 @@ h6{
     right: -508px;
     color: #fff;
     padding: 20px 275px 20px 20px;
-    box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
     z-index: 999;
     transition: all .5s;
     ul{
