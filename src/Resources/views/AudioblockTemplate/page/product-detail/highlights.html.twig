@@ -3,15 +3,6 @@
 
 {% block utilities_offcanvas_content %}
     <div class="product-detail-description-custom">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                {{ page.product.customFields.custom_highlights_textfield | raw }}
-            </div>
-            <div class="col-lg-6">
-
-
-
-            </div>
-        </div>
+        {{ page.product.customFields.custom_highlights_text | raw }}
     </div>
 {% endblock %}
