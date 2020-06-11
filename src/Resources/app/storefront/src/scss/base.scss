@@ -191,6 +191,26 @@ h6{
     text-decoration: underline;
 }
 
+.breadcrumb{
+    display: none;
+}
+.container-main{
+    padding: 0;
+}
+.cms-section{
+    padding: 50px 0;
+}
+.bg-gray{
+    background: $light-gray;
+    .cms-block-text-hero .cms-element-text h1 i{
+        background: $light-gray;
+    }
+}
+
+
+
+
+
 /*** HEADER ***/
 .header-logo-main-link{
     img{
@@ -598,6 +618,8 @@ h6{
         position: relative;
         display: block;
         box-shadow: 1px 1px 6px #3e3e3e;
+        margin-bottom: 35px;
+        overflow: hidden;
         span{
             position: absolute;
             top: 0;
@@ -612,6 +634,10 @@ h6{
         }
         img{
             width: 100%;
+            transition: 0.3s transform;
+        }
+        &:hover img{
+            transform: scale(1.1);
         }
     }
 }
