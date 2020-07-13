@@ -92,7 +92,7 @@ https://sass-guidelin.es/#the-7-1-pattern
  * -------------------- */
 @import 'page/product-detail/product-detail';
 //@import 'page/product-detail/configurator';
-//@import 'page/product-detail/tabs';
+@import 'page/product-detail/tabs';
 //@import 'page/product-detail/review';
 
 //@import 'page/account/account';
@@ -106,7 +106,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'page/account/edit-order';
 //@import 'page/account/order-detail';
 
-//@import 'page/checkout/checkout';
+@import 'page/checkout/checkout';
 //@import 'page/checkout/aside';
 //@import 'page/checkout/cart';
 //@import 'page/checkout/cart-item';
@@ -144,8 +144,8 @@ h6{
     color: $headline-color;
 }
 .main-navigation-link{
-    font-family: $headline-font;
     font-weight: 400;
+    font-size: 1rem;
 }
 .button-1{
     padding: 10px 25px 10px 50px;
@@ -180,6 +180,23 @@ h6{
 .button-1.add-to-cart {
     border: 0 !important;
 }
+.button-1.small{
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 5px 20px 5px 36px;
+}
+.button-1.small:before{
+    background-color: #e5005b;
+    height: 24px;
+    width: 24px;
+    background-size: 12px auto;
+    font-size: 12px;
+}
+.button-1.small.info{
+    background-image: url(../assets/img/icon-map-marker.svg);
+}
+
 .hero-slider-cta-btn{
     padding: 6px 20px 6px 45px;
     background: rgba(0,0,0,0.3);
@@ -189,6 +206,7 @@ h6{
     font-weight: 700;
     text-transform: uppercase;
     border: 1px solid #fff;
+    min-width: 180px;
 }
 .hero-slider-cta-btn::before{
     content: '';
@@ -230,6 +248,9 @@ h6{
     padding: 0;
 }
 .cms-section{
+    &.no-padding{
+        padding: 0;
+    }
     padding: 50px 0;
 }
 .bg-gray{
@@ -257,9 +278,9 @@ h6{
     background: #000;
     position: fixed;
     top: 250px;
-    right: -508px;
+    right: -265px;
     color: #fff;
-    padding: 20px 275px 20px 20px;
+    padding: 20px 15px 20px 20px;
     z-index: 999;
     transition: all .5s;
     ul{
@@ -290,8 +311,8 @@ h6{
         position: absolute;
         top: 14px;
         left: 0;
-        height: 45px;
-        width: 45px;
+        height: 36px;
+        width: 36px;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -313,9 +334,9 @@ h6{
 .contact-sidebar:hover{
     right: 0px;
     ul::before{
-        top: 6px;
+    /*    top: 6px;
         height: 40px;
-        width: 40px;
+        width: 40px;*/
     }
 }
 /*** STARTSEITE ***/
@@ -359,7 +380,7 @@ h6{
     display: none;
 }
 .cms-element-product-listing .cms-listing-row{
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     margin-bottom: 50px;
 }
 .cms-element-product-listing .cms-listing-col{
@@ -420,8 +441,10 @@ h6{
                 .product-name{
                     text-transform: uppercase;
                     color: #000;
-                    font-size: 22px;
-
+                    font-size: 3rem;
+                    font-family: $headline-font;
+                    overflow: inherit;
+                    font-weight: 300;
                 }
                 .listing-button-price-wrapper{
                     display: flex;
@@ -608,4 +631,27 @@ h6{
     }
 }
 
+/*** FACHHHÄNDLER ***/
+.cms-element-moorl-merchant-finder{
+    .element-content{
+        .results-content ul li{
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            .siegel-fachhaendler{
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                width: 150px;
+            }
+        }
+    }
+}
+
+
+
+/*** KATEGORIE - ÜBERSICHTSSEITE ***/
+.cms-element-product-listing{
+
+}
 

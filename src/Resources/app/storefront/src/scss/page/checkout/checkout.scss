@@ -1,0 +1,20 @@
+.header-minimal{
+    &.fixed-top{
+        background: #000;
+    }
+    .header-logo-main-link{
+        width: 200px;
+    }
+    .header-minimal-contact{
+        color: #fff;
+        a{
+            color: #fff;
+        }
+    }
+    .header-minimal-back-to-shop{
+        .btn{
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+}

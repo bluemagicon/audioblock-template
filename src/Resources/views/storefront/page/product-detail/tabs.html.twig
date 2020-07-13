@@ -2,48 +2,64 @@
 
 
 {% block page_product_detail_tabs_navigation_description %}
-    {% if page.product.customFields.custom_highlights_textfield %}
-        <li class="nav-item">
-            <a class="nav-link product-detail-tab-navigation-link active"
-               id="highlights-tab"
-               data-toggle="tab"
-               data-offcanvas-tabs="true"
-               href="#highlights-tab-desc"
-               role="tab"
-               aria-controls="description-tab-pane"
-               aria-selected="true">
-                Highlights
-            </a>
-        </li>
-    {% endif %}
 
-        <li class="nav-item">
-            <a class="nav-link product-detail-tab-navigation-link"
-               id="technical-data-tab"
-               data-toggle="tab"
-               data-offcanvas-tabs="true"
-               href="#technical-data-tab-desc"
-               role="tab"
-               aria-controls="description-tab-pane"
-               aria-selected="false">
-                Technische Daten
-            </a>
-        </li>
+    <!-- 01: ESCHREIBUNG -->
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link active"
+           id="highlights-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#highlights-tab-desc"
+           role="tab"
+           aria-controls="description-tab-pane"
+           aria-selected="true">
+            {{ "detail.tabsDescription"|trans|sw_sanitize }}
+        </a>
+    </li>
 
-    {% if page.product.customFields.delivery-scope_editor %}
-        <li class="nav-item">
-            <a class="nav-link product-detail-tab-navigation-link"
-               id="delivery-tab"
-               data-toggle="tab"
-               data-offcanvas-tabs="true"
-               href="#delivery-tab-desc"
-               role="tab"
-               aria-controls="delivery-tab-pane"
-               aria-selected="false">
-                Lieferumfang
-            </a>
-        </li>
-    {% endif %}
+    <!-- 02: SPEZIFIKATIONEN -->
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="technical-data-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#technical-data-tab-desc"
+           role="tab"
+           aria-controls="description-tab-pane"
+           aria-selected="false">
+            {{ "detail.tabsSpecifications"|trans|sw_sanitize }}
+        </a>
+    </li>
+
+    <!-- 03: LIEFERUMFANG -->
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="delivery-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#delivery-tab-desc"
+           role="tab"
+           aria-controls="delivery-tab-pane"
+           aria-selected="false">
+            {{ "detail.tabsDeliveryScope"|trans|sw_sanitize }}
+        </a>
+    </li>
+
+    <!-- 04: DOWNLOADS -->
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="service-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#service-tab-desc"
+           role="tab"
+           aria-controls="service-tab-pane"
+           aria-selected="false">
+            {{ "detail.tabsDownloads"|trans|sw_sanitize }}
+        </a>
+    </li>
+
+    <!-- 05: BEWERTUNGEN -->
     <li class="nav-item">
         <a class="nav-link product-detail-tab-navigation-link"
            id="reviews-tab"
@@ -53,56 +69,54 @@
            role="tab"
            aria-controls="reviews-tab-pane"
            aria-selected="false">
-            Bewertungen
+            {{ "detail.tabsReview"|trans|sw_sanitize }}
         </a>
     </li>
-    {% if page.product.customFields.service_editor %}
-        <li class="nav-item">
-            <a class="nav-link product-detail-tab-navigation-link"
-               id="service-tab"
-               data-toggle="tab"
-               data-offcanvas-tabs="true"
-               href="#service-tab-desc"
-               role="tab"
-               aria-controls="service-tab-pane"
-               aria-selected="false">
-                Service
-            </a>
-        </li>
-    {% endif %}
+
     {% block page_product_detail_tabs_navigation_review %}{% endblock %}
 {% endblock %}
 
 
 {% block page_product_detail_tabs_content_description %}
+    <!-- 01: BESCHREIBUNG -->
     <div class="tab-pane fade show active"
          id="highlights-tab-desc"
          role="tabpanel"
          aria-labelledby="highlights-tab">
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/highlights.html.twig' %}
     </div>
+
+    <!-- 02: SPEZIFIKATIONEN -->
     <div class="tab-pane fade show"
          id="technical-data-tab-desc"
          role="tabpanel"
          aria-labelledby="technical-data-tab">
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/technical-data.html.twig' %}
     </div>
+
+    <!-- 03: LIEFERUMFANG -->
     <div class="tab-pane fade show"
          id="delivery-tab-desc"
          role="tabpanel"
-         aria-labelledby="delivery-tab">
+         aria-labelledby="delivery-data-tab">
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/delivery-scope.html.twig' %}
     </div>
-    <div class="tab-pane fade show"
-         id="reviews-tab-desc"
-         role="tabpanel"
-         aria-labelledby="reviews-tab">
-        {% sw_include '@Storefront/storefront/page/product-detail/review/review.html.twig' with {'reviews': page.reviews} %}
-    </div>
+
+    <!-- 04: DOWNLOADS -->
     <div class="tab-pane fade show"
          id="service-tab-desc"
          role="tabpanel"
          aria-labelledby="service-data-tab">
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/service.html.twig' %}
     </div>
+
+    <!-- 03: BEWERTUNGEN -->
+    <div class="tab-pane fade show"
+         id="reviews-tab-desc"
+         role="tabpanel"
+         aria-labelledby="reviews-tab">
+        {% sw_include '@Storefront/storefront/page/product-detail/review/review.html.twig' with {'reviews': page.reviews} %}
+    </div>
+
+
 {% endblock %}

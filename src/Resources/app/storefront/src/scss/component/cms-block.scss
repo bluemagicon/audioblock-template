@@ -1,0 +1,68 @@
+
+/*** CMS-BLOCK: INNER-CONTENT (OWN CLASS) ***/
+.cms-block-container{
+    .inner-content{
+        background: #fff;
+        height: 100%;
+        .cms-element-text{
+            padding: 20px;
+        }
+    }
+}
+
+/*** CMS-IMAGES ***/
+.cms-element-image{
+    .cms-image{
+        width: 100%;
+    }
+}
+
+/*** FACHHÄNDLERSUCHE ***/
+.moorl-merchant-finder-results{
+    .moorl-merchant-finder-result-item{
+        small{
+            position: absolute;
+            float: none;
+            bottom: -35px;
+            right: 0px;
+        }
+    }
+}
+
+
+/*** HOME: SLIDER ***/
+.hero-slider-content-container{
+    .hero-slider-description{
+        .hero-slider-headline{
+            display:none;
+        }
+        .hero-slider-content-after{
+            h2{
+                font-size: 2.4rem;
+                color: #fff;
+            }
+        }
+        .hero-slider-cta-btn{
+            margin-bottom: 0;
+        }
+
+    }
+}
+
+/*** CMS-BLOCK: TEXT / IMAGE ***/
+.cms-block-image-text-row{
+    h3{
+        margin-bottom: 0;
+    }
+    h6{
+        color: $secondary-color;
+        font-family: $text-font;
+        font-size: 1rem;
+    }
+    p{
+        i{
+            font-size: 1.1rem;
+            color: #7d7d7d;
+        }
+    }
+}
