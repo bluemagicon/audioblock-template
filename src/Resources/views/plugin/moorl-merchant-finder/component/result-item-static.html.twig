@@ -1,9 +1,15 @@
 {% set displayMode = displayMode ?: 'full' %}
 
-<li style="background-image:url({{ merchant.media.url }})" id="{{ merchant.id }}" class="list-group-item moorl-merchant-finder-result-item display-mode-{{ displayMode }}">
+<li click="javascript:"
+    data-location-lat="{{ merchant.locationLat }}"
+    data-location-lon="{{ merchant.locationLon }}"
+    data-item="{{ merchant.id }}"
+    style="background-image:url({{ merchant.media.url }})" id="{{ merchant.id }}"
+    class="list-group-item moorl-merchant-finder-result-item display-mode-{{ displayMode }}">
 
     {% if merchant.highlight %}
-        <img class="siegel-fachhaendler" src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
+        <img class="siegel-fachhaendler"
+             src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
     {% endif %}
 
     <div class="row form-row">
@@ -11,41 +17,37 @@
             {% block element_moorl_merchant_finder_result_title %}
                 <h4 class="">
                     {{ merchant.company }}
-                    {% if merchant.distance %}
-                        <small class="text-small float-right">{{ "moorl-merchant-finder.distance"|trans }}
-                            : {{ merchant.distance }} {{ "moorl-merchant-finder.km"|trans }}</small>
-                    {% endif %}
                 </h4>
             {% endblock %}
 
             <div class="row form-row justify-content-between">
                 {% block element_moorl_merchant_finder_result_address %}
-                    <div class="col-6">
-                        <p class="">{{ merchant.street }} {{ merchant.streetNumber }}
-                            <br>{{ merchant.zipcode }} {{ merchant.city }}
-                            {% if merchant.country %}
-                                {{ merchant.country }}
-                            {% endif %}
-                        </p>
-
-                        {% if merchant.phoneNumber %}
-                            <p class="">{{ "moorl-merchant-finder.phoneNumber"|trans }} {{ merchant.phoneNumber }}</p>
+                <div class="col-6">
+                    <p class="">{{ merchant.street }} {{ merchant.streetNumber }}
+                        <br>{{ merchant.zipcode }} {{ merchant.city }}
+                        {% if merchant.country %}
+                            {{ merchant.country }}
                         {% endif %}
+                    </p>
+
+                    {% if merchant.phoneNumber %}
+                        <p class="">{{ "moorl-merchant-finder.phoneNumber"|trans }} {{ merchant.phoneNumber }}</p>
+                    {% endif %}
+
+
+                        <span class="merchant-distance {% if merchant.distance %} visible{% endif %}">{{ "moorl-merchant-finder.distance"|trans }} : {{ merchant.distance }} {{ "moorl-merchant-finder.km"|trans }}</span>
+
+
                     </div>
                 {% endblock %}
 
                 {% block element_moorl_merchant_finder_result_description %}
-                    <div class="col-6">
-                        {% if merchant.description %}
-                            <b>{{ "moorl-merchant-finder.description"|trans }}</b>
-                            <p style="white-space: pre-line">{{ merchant.description }}</p>
-                        {% endif %}
-
-                        {% if merchant.openingHours %}
-                            <b>{{ "moorl-merchant-finder.openingHours"|trans }}</b>
-                            <p style="white-space: pre-line">{{ merchant.openingHours }}</p>
-                        {% endif %}
-                    </div>
+                    <div class="">
+                    {% if merchant.description %}
+                        <b>{{ "moorl-merchant-finder.description"|trans }}</b>
+                        <p style="white-space: pre-line">{{ merchant.description }}</p>
+                    {% endif %}
+                </div>
                 {% endblock %}
             </div>
         </div>
@@ -106,26 +108,11 @@
             {% endif %}
         {% endblock %}
 
-        {% block element_moorl_merchant_finder_result_button_location %}
-            {# displayMode full is always with map #}
-            {% if displayMode == 'full' %}
-                {% if merchant.locationLon %}
-                    <a href="javascript:"
-                       data-location-lat="{{ merchant.locationLat }}"
-                       data-location-lon="{{ merchant.locationLon }}"
-                       data-item="{{ merchant.id }}"
-                       class="button-1 small">
-                        <i class="fas fa-map-pin"></i> {{ "moorl-merchant-finder.displayOnMap"|trans }}
-                    </a>
-                {% endif %}
-            {% endif %}
-        {% endblock %}
-
         {% block element_moorl_merchant_finder_result_button_cms %}
             {% if shopware.config.MoorlMerchantFinder.config.detailPage == 'popup' %}
                 <a href="javascript:" data-trigger="#merchant_finder_more"
                    data-url="{{ path('moorl.merchant-finder.merchant', {'merchantId':merchant.id}) }}"
-                   class="button-1 small">{{ "moorl-merchant-finder.more"|trans }}</a>
+                   class="button-1 button-small button-info">{{ "moorl-merchant-finder.more"|trans }}</a>
             {% endif %}
         {% endblock %}
     </div>

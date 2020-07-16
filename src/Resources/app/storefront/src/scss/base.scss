@@ -180,21 +180,26 @@ h6{
 .button-1.add-to-cart {
     border: 0 !important;
 }
-.button-1.small{
+.button-1.button-small{
     color: #000;
     background: #fff;
     border: 1px solid #000;
-    padding: 5px 20px 5px 36px;
+    padding: 3px 10px 3px 30px;
 }
-.button-1.small:before{
-    background-color: #e5005b;
-    height: 24px;
-    width: 24px;
+.button-1.button-small:before{
+    background-color: #000;
+    height: 20px;
+    width: 20px;
     background-size: 12px auto;
     font-size: 12px;
 }
-.button-1.small.info{
-    background-image: url(../assets/img/icon-map-marker.svg);
+.button-1.button-small.button-info:before{
+    background-image: url(../assets/img/icon-info.svg);
+    background-size: 12px auto;
+}
+.button-1.button-small.button-select:before{
+    background-image: url(../assets/img/icon-select.svg);
+    background-size: 12px auto;
 }
 
 .hero-slider-cta-btn{
@@ -228,17 +233,6 @@ h6{
     background: $primary-color;
     color: #fff;
     text-decoration: none;
-}
-
-.top-bar-nav a:hover,
-.top-bar-nav button:hover{
-    color: #fff !important;
-    text-decoration: underline;
-}
-.top-bar-nav .show a,
-.top-bar-nav .show button{
-    color: #fff !important;
-    text-decoration: underline;
 }
 
 .breadcrumb{
@@ -634,15 +628,45 @@ h6{
 /*** FACHHHÄNDLER ***/
 .cms-element-moorl-merchant-finder{
     .element-content{
-        .results-content ul li{
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: relative;
-            .siegel-fachhaendler{
-                position: absolute;
-                bottom: 10px;
-                right: 10px;
-                width: 150px;
+        .results-content{
+            h4{
+                font-size: 1.5rem;
+            }
+            .moorl-merchant-finder-result-item {
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: relative;
+                background-position: top right;
+
+                .siegel-fachhaendler {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    width: 150px;
+                    box-shadow: 0px 0px 6px 3px #fff;
+                }
+                .button-1.small {
+                    margin-right: 10px;
+                }
+                .merchant-distance {
+                    position: relative;
+                    bottom: inherit;
+                    color: #000;
+                    font-family: "bebas-neue", sans-serif;
+                    display: block;
+                    margin-top: 10px;
+                    visibility: hidden;
+                    &.visible{
+                        visibility: visible;
+                    }
+                }
+                p{
+                    margin-bottom: 0px;
+                    line-height: 1.4;
+                }
+                &:hover{
+                    background-color: transparent;
+                }
             }
         }
     }
