@@ -115,5 +115,11 @@
                    class="button-1 button-small button-info">{{ "moorl-merchant-finder.more"|trans }}</a>
             {% endif %}
         {% endblock %}
+
+        {% if shopware.config.MoorlMerchantPicker.config.selectionButton == true %}
+            <button type="button" value="pick" data-merchant="{{ merchant.id }}" class="button-1 button-small button-select">
+                {{ "moorl-merchant-finder.chose"|trans }}
+            </button>
+        {% endif %}
     </div>
 </li>
