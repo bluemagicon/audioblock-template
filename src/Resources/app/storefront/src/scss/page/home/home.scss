@@ -1,0 +1,67 @@
+/*** HERO-SLIDER ***/
+.hero-slider .hero-slider-headline{
+    font-family: $headline-font !important;
+}
+.hero-slider-cta-btn{
+    padding: 6px 20px 6px 45px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border-radius: 25px;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    min-width: 180px;
+}
+.hero-slider-cta-btn::before{
+    content: '';
+    display: block;
+    background-color: $secondary-color;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-image: url('/bundles/audioblock/assets/img/button-1-arrow-right.svg');
+    background-size: 18px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero-slider-cta-btn:hover{
+    background: $primary-color;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*** HOME: KATEGORIEN ***/
+.home-categories{
+    a.category-box{
+        position: relative;
+        display: block;
+        box-shadow: 1px 1px 6px #3e3e3e;
+        margin-bottom: 35px;
+        overflow: hidden;
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            font-family: "bebas-neue", sans-serif;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 1.4rem;
+        }
+        img{
+            width: 100%;
+            transition: 0.3s transform;
+        }
+        &:hover img{
+            transform: scale(1.1);
+        }
+    }
+}

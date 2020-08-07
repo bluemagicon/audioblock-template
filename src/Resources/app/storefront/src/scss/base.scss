@@ -26,7 +26,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Base stuff
  * ---------- */
-//@import 'base/base';
+@import 'base/base';
 //@import 'base/reboot';
 //@import 'base/ie11-fixes';
 
@@ -40,11 +40,11 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'component/base-slider';
 //@import 'component/image-slider';
 //@import 'component/product-slider';
-//@import 'component/gallery-slider';
+@import 'component/gallery-slider';
 //@import 'component/magnifier';
 //@import 'component/zoom-modal';
 //@import 'component/offcanvas';
-//@import 'component/product-box';
+@import 'component/product-box';
 //@import 'component/loader';
 //@import 'component/modal';
 //@import 'component/flags';
@@ -52,7 +52,9 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'component/pagination';
 //@import 'component/cms-sections';
 @import 'component/cms-block';
-//@import 'component/cms-element';
+@import 'component/contact-sidebar';
+@import 'component/buttons';
+@import 'component/cms-element';
 //@import 'component/cms-form-confirmation';
 //@import 'component/forms';
 //@import 'component/address-editor';
@@ -75,8 +77,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'layout/container';
 @import 'layout/top-bar';
 @import 'layout/header';
-//@import 'layout/header-minimal';
-//@import 'layout/footer';
+@import 'layout/header-minimal';
+@import 'layout/footer';
 @import 'layout/main-navigation';
 //@import 'layout/navigation-flyout';
 //@import 'layout/navigation-offcanvas';
@@ -87,15 +89,21 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'layout/cookie-configuration';
 //@import 'layout/scroll-up';
 
+@import 'plugin/merchant-finder';
+
+
+
 /*
  * Page-specific styles
  * -------------------- */
 @import 'page/product-detail/product-detail';
+@import 'page/home/home';
+
 //@import 'page/product-detail/configurator';
 @import 'page/product-detail/tabs';
 //@import 'page/product-detail/review';
 
-//@import 'page/account/account';
+@import 'page/account/account';
 //@import 'page/account/aside';
 //@import 'page/account/overview';
 //@import 'page/account/register';
@@ -107,7 +115,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'page/account/order-detail';
 
 @import 'page/checkout/checkout';
-//@import 'page/checkout/aside';
+@import 'page/checkout/aside';
 //@import 'page/checkout/cart';
 //@import 'page/checkout/cart-item';
 //@import 'page/checkout/register';
@@ -120,213 +128,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'page/search/search';
 
 
-.img-wrapper img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-/*** TYPO & BUTTONS ***/
-html, body{
-    font-family: $text-font;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-family: $headline-font;
-    font-style: normal;
-    font-weight: 400;
-    color: $headline-color;
-}
-.main-navigation-link{
-    font-weight: 400;
-    font-size: 1rem;
-}
-.button-1{
-    padding: 10px 25px 10px 50px;
-    background: #565656;
-    color: #fff;
-    border-radius: 20px;
-    position: relative;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.button-1::before{
-    content: '';
-    display: block;
-    background-color: #E5005B;
-    height: 36px;
-    width: 36px;
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background-image: url('../assets/img/button-1-arrow-right.svg');
-    background-size: 20px auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.button-1:hover{
-    background: #7a7a7a;
-    color: #fff;
-    text-decoration: none;
-}
-.button-1.add-to-cart {
-    border: 0 !important;
-}
-.button-1.button-small{
-    color: #000;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 3px 10px 3px 30px;
-    display: inline-block;
-}
-.button-1.button-small:before{
-    background-color: #000;
-    height: 20px;
-    width: 20px;
-    background-size: 12px auto;
-    font-size: 12px;
-}
-.button-1.button-small.button-info:before{
-    background-image: url(../assets/img/icon-info.svg);
-    background-size: 12px auto;
-}
-.button-1.button-small.button-select:before{
-    background-image: url(../assets/img/icon-select.svg);
-    background-size: 12px auto;
-}
-
-.hero-slider-cta-btn{
-    padding: 6px 20px 6px 45px;
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-    border-radius: 25px;
-    position: relative;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid #fff;
-    min-width: 180px;
-}
-.hero-slider-cta-btn::before{
-    content: '';
-    display: block;
-    background-color: $secondary-color;
-    height: 36px;
-    width: 36px;
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background-image: url('../assets/img/button-1-arrow-right.svg');
-    background-size: 18px auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.hero-slider-cta-btn:hover{
-    background: $primary-color;
-    color: #fff;
-    text-decoration: none;
-}
-
-.breadcrumb{
-    display: none;
-}
-.container-main{
-    padding: 0;
-}
-.cms-section{
-    &.no-padding{
-        padding: 0;
-    }
-    padding: 50px 0;
-}
-.bg-gray{
-    background: $light-gray;
-    .cms-block-text-hero .cms-element-text h1 i{
-        background: $light-gray;
-    }
-}
-
-
-
-
-
-/*** HEADER ***/
-.header-logo-main-link{
-    img{
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-}
-
-/*** CONTACT-SIDEBAR ***/
-.contact-sidebar{
-    background: #000;
-    position: fixed;
-    top: 250px;
-    right: -291px;
-    color: #fff;
-    padding: 20px 15px 20px 20px;
-    z-index: 999;
-    transition: all .5s;
-    ul{
-        margin-bottom: 15px;
-        list-style: none;
-        position: relative;
-        li{
-            strong{
-                text-transform: uppercase;
-                font-size: 22px;
-                font-family: $headline-font;
-                font-style: normal;
-                font-weight: 400;
-            }
-            a{
-                color: #fff;
-            }
-            span{
-                display: inline-block;
-                width: 70px;
-            }
-        }
-    }
-    ul:last-child{
-        margin: 0;
-    }
-    &::before{
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translateX(-100%);
-        height: 60px;
-        width: 60px;
-        background-color: #000;
-        background-image: url('../assets/img/phone.svg');
-        background-size: 35px auto;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-.contact-sidebar:hover{
-    right: 0px;
-    ul::before{
-    /*    top: 6px;
-        height: 40px;
-        width: 40px;*/
-    }
-}
-/*** STARTSEITE ***/
+/*** Weiß ich noch nicht ***/
 .product-slider-item{
     .product-price-unit{
         display: none !important;
@@ -338,206 +140,6 @@ h6{
         margin-top: 25px !important;
     }
 }
-/*** INTRO-WRAPPER ***/
-.intro-wrapper{
-    width: 950px;
-    max-width: 90%;
-    margin: 0 auto;
-    h1{
-        text-transform: uppercase;
-        font-size: 3rem;
-    }
-    h3{
-        text-transform: uppercase;
-        color: $secondary-color;
-    }
-    hr{
-        /*border: 0 !important;
-        max-width: inherit !important;
-        width: 200px;
-        height: 1px;
-        background: rgba(0,0,0,0.8);
-        margin: 30px 0;*/
-        display: none;
-    }
-}
-
-/*** PRODUCT-LISTING ***/
-.cms-element-product-listing-actions{
-    display: none;
-}
-.cms-element-product-listing .cms-listing-row{
-    /*margin-top: 50px;*/
-    margin-bottom: 50px;
-}
-.cms-element-product-listing .cms-listing-col{
-    margin-bottom: 40px;
-}
-.cms-element-product-listing .cms-listing-col:nth-child(2n) .product-box .card-body{
-    flex-direction: row-reverse !important;
-
-    .product-info{
-        margin-right: 50px;
-        margin-left: 0;
-    }
-    .product-image-wrapper{
-        .product-image-link{
-            .product-image{
-                margin-right: 0;
-                margin-left: 50px;
-            }
-        }
-    }
-
-}
-
-/*** PRODUCT-BOX ***/
-.cms-listing-col{
-    .product-box{
-        border: 0;
-        .card-body{
-            padding: 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            .product-image-wrapper{
-                height: auto;
-                width: 55%;
-                margin-bottom: 0;
-                flex-basis: unset;
-                flex-grow: unset;
-                flex-shrink: unset;
-
-                .product-image-link{
-                    .product-image{
-                        max-height: inherit !important;
-                        height: auto;
-                        width: 100%;
-                        overflow: hidden;
-                        margin-right: 50px;
-                    }
-                }
-            }
-            .product-info{
-                width: 40%;
-                max-width: 480px;
-                margin-left: 50px;
-                .product-rating{
-                    display: none;
-                }
-                .product-name{
-                    text-transform: uppercase;
-                    color: #000;
-                    font-size: 3rem;
-                    font-family: $headline-font;
-                    overflow: inherit;
-                    font-weight: 300;
-                }
-                .listing-button-price-wrapper{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-top: 20px;
-
-                    .product-price-unit{
-                        display: none;
-                    }
-                    .product-price{
-                        margin-top: 0px;
-                    }
-                    .product-price-info{
-                        margin: 0;
-                    }
-                }
-            }
-        }
-    }
-}
-/*** FOOTER ***/
-.footer-main{
-    background: #000;
-    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.5);
-    padding: 30px 0;
-    .footer-logo-wrapper{
-        img{
-            width: 250px;
-        }
-    }
-    .row{
-        justify-content: space-between !important;
-    }
-
-    .footer-col{
-        ul{
-            list-style: none;
-            margin-bottom: 15px;
-            padding: 0;
-        }
-        ul:last-child{
-            margin-bottom: 0;
-        }
-        h4,
-        a,
-        li{
-            color: #fff;
-
-        }
-    }
-    .footer-socials{
-        .icons-wrapper{
-            display: flex;
-            a{
-                text-align: center;
-                margin-right: 10px;
-
-                .img-wrapper {
-                    width: 35px;
-                    display: block;
-                    margin: 0 auto 3px auto;
-                }
-            }
-        }
-    }
-}
-/*** INTRO-TEXT ***/
-.cms-block-text-hero{
-    max-width: 800px;
-    margin: 0 auto;
-    .cms-element-text {
-        h1{
-            font-size: 3rem;
-            margin-bottom: 30px;
-            position: relative;
-            i{
-                background: #fff;
-                position: relative;
-                z-index: 9;
-                padding: 0 20px;
-                font-style: normal;
-            }
-        }
-        h1:after{
-            content: "";
-            position: absolute;
-            background: $primary-color;
-            width: 100%;
-            height: 1px;
-            left: 0px;
-            top: 20px;
-        }
-        h3{
-            color: $secondary-color;
-            font-family: $text-font;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-        hr{
-            display: none;
-        }
-    }
-}
-/*** PRODUCT-DETAIL ***/
 
 
 /*** SHOPPING CART ***/
@@ -573,102 +175,3 @@ h6{
         }
     }
 }
-
-/*** PLUGIN: MERCHANT-FINDER ***/
-.cms-element-moorl-merchant-finder .moorl-merchant-finder-result-item .highlight{
-    color: $secondary-color;
-    opacity: 1;
-    background: #000;
-    font-family: $headline-font;
-    font-size: 1.3rem;
-}
-
-/*** PLUGIN: SLIDER***/
-.hero-slider .hero-slider-headline{
-    font-family: $headline-font !important;
-}
-
-/*** HOME: KATEGORIEN ***/
-.home-categories{
-    a.category-box{
-        position: relative;
-        display: block;
-        box-shadow: 1px 1px 6px #3e3e3e;
-        margin-bottom: 35px;
-        overflow: hidden;
-        span{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #000;
-            color: #fff;
-            font-family: "bebas-neue", sans-serif;
-            text-align: center;
-            padding: 5px 0;
-            font-size: 1.4rem;
-        }
-        img{
-            width: 100%;
-            transition: 0.3s transform;
-        }
-        &:hover img{
-            transform: scale(1.1);
-        }
-    }
-}
-
-/*** FACHHHÄNDLER ***/
-.cms-element-moorl-merchant-finder{
-    .element-content{
-        .results-content{
-            h4{
-                font-size: 1.5rem;
-            }
-            .moorl-merchant-finder-result-item {
-                background-size: contain;
-                background-repeat: no-repeat;
-                position: relative;
-                background-position: top right;
-
-                .siegel-fachhaendler {
-                    position: absolute;
-                    bottom: 10px;
-                    right: 10px;
-                    width: 150px;
-                    box-shadow: 0px 0px 6px 3px #fff;
-                }
-                .button-1.small {
-                    margin-right: 10px;
-                }
-                .merchant-distance {
-                    position: relative;
-                    bottom: inherit;
-                    color: #000;
-                    font-family: "bebas-neue", sans-serif;
-                    display: block;
-                    margin-top: 10px;
-                    visibility: hidden;
-                    &.visible{
-                        visibility: visible;
-                    }
-                }
-                p{
-                    margin-bottom: 0px;
-                    line-height: 1.4;
-                }
-                &:hover{
-                    background-color: transparent;
-                }
-            }
-        }
-    }
-}
-
-
-
-/*** KATEGORIE - ÜBERSICHTSSEITE ***/
-.cms-element-product-listing{
-
-}
-

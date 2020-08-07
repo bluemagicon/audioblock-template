@@ -6,6 +6,11 @@
         background: #000;
         .main-navigation-link {
             color: #fff;
+            font-weight: 400;
+            font-size: 1rem;
+            &.home-link{
+                display: none;
+            }
             &.active {
                 color: #fff;
                 .main-navigation-link-text {

@@ -1,0 +1,23 @@
+{% sw_extends '@Storefront/storefront/page/checkout/address/index.html.twig' %}
+
+
+{% block page_checkout_address_header %}
+    <h1 class="address-main-header">
+        {{ "account.loginSubmit"|trans|sw_sanitize }}
+    </h1>
+{% endblock %}
+
+{% block page_checkout_address_login_toggle %}{% endblock %}
+
+{% block page_checkout_address_login %}
+    {% block page_checkout_address_login_card %}
+        {% sw_include '@Storefront/storefront/component/account/login.html.twig' %}
+    {% endblock %}
+{% endblock %}
+
+{% block page_checkout_address_register_card %}
+    <h1>Neukunde? Jetzt registrieren!</h1>
+    {{ parrent }}
+    {% sw_include '@Storefront/storefront/page/checkout/address/register.html.twig' with {'cardTitle': "checkout.addressRegisterCardTitle"|trans|sw_sanitize} %}
+{% endblock %}
+

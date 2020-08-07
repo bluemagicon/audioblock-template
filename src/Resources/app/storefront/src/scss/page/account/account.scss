@@ -1,0 +1,23 @@
+.login-card{
+    background: $light-gray;
+    padding: 20px;
+    margin-bottom: 50px;
+    .login-password-recover{
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+.register-card{
+    background: $light-gray;
+    padding: 20px;
+    .register-submit{
+        text-align: left;
+        margin-top: 50px;
+    }
+    .privacy-notice{
+        a{
+            text-decoration: underline;
+        }
+    }
+}

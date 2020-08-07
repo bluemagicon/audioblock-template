@@ -1,0 +1,28 @@
+
+/*** PRODUCT-LISTING ***/
+.cms-element-product-listing-actions{
+    display: none;
+}
+.cms-element-product-listing .cms-listing-row{
+    /*margin-top: 50px;*/
+    margin-bottom: 50px;
+}
+.cms-element-product-listing .cms-listing-col{
+    margin-bottom: 40px;
+}
+.cms-element-product-listing .cms-listing-col:nth-child(2n) .product-box .card-body{
+    flex-direction: row-reverse !important;
+
+    .product-info{
+        margin-right: 50px;
+        margin-left: 0;
+    }
+    .product-image-wrapper{
+        .product-image-link{
+            .product-image{
+                margin-right: 0;
+                margin-left: 50px;
+            }
+        }
+    }
+}

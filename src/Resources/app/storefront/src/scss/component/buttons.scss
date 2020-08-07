@@ -1,0 +1,57 @@
+.button-1{
+    padding: 10px 25px 10px 50px;
+    background: #565656;
+    color: #fff;
+    border-radius: 20px;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0;
+}
+.button-1::before{
+    content: '';
+    display: block;
+    background-color: #E5005B;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-image: url('/bundles/audioblock/assets/img/button-1-arrow-right.svg');
+    background-size: 20px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: 0 !important;
+}
+.button-1:hover{
+    background: #3c3c3c;
+    color: #fff;
+    text-decoration: none;
+}
+.button-1.add-to-cart {
+    border: 0 !important;
+}
+.button-1.button-small{
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 3px 10px 3px 30px;
+    display: inline-block;
+}
+.button-1.button-small:before{
+    background-color: #000;
+    height: 20px;
+    width: 20px;
+    background-size: 12px auto;
+    font-size: 12px;
+}
+.button-1.button-small.button-info:before{
+    background-image: url('/bundles/audioblock/assets/img/icon-info.svg');
+    background-size: 12px auto;
+}
+.button-1.button-small.button-select:before{
+    background-image: url('/bundles/audioblock/assets/img/icon-select.svg');
+    background-size: 12px auto;
+}

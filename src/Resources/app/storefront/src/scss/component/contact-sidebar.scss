@@ -1,0 +1,52 @@
+.contact-sidebar{
+    background: #000;
+    position: fixed;
+    top: 250px;
+    right: -291px;
+    color: #fff;
+    padding: 20px 15px 20px 20px;
+    z-index: 999;
+    transition: all .5s;
+    ul{
+        margin-bottom: 15px;
+        list-style: none;
+        position: relative;
+        li{
+            strong{
+                text-transform: uppercase;
+                font-size: 22px;
+                font-family: $headline-font;
+                font-style: normal;
+                font-weight: 400;
+            }
+            a{
+                color: #fff;
+            }
+            span{
+                display: inline-block;
+                width: 70px;
+            }
+        }
+    }
+    ul:last-child{
+        margin: 0;
+    }
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        height: 60px;
+        width: 60px;
+        background-color: #000;
+        background-image: url('/bundles/audioblock/assets/img/phone.svg');
+        background-size: 35px auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.contact-sidebar:hover{
+    right: 0px;
+}

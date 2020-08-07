@@ -1,0 +1,49 @@
+.img-wrapper img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*** TYPO & BUTTONS ***/
+html, body{
+    font-family: $text-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $font-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $headline-font;
+    font-style: normal;
+    font-weight: 400;
+    color: $headline-color;
+}
+a{
+    color: $font-color;
+}
+
+/*** BREADCRUMBS ***/
+.breadcrumb{
+    /*display: none;*/
+}
+
+/*** CONTAINER & SECTIONS ***/
+.container-main{
+    /*padding: 0;*/
+}
+.cms-section{
+    &.no-padding{
+        padding: 0;
+    }
+    padding: 50px 0;
+}
+.bg-gray{
+    background: $light-gray;
+    .cms-block-text-hero .cms-element-text h1 i{
+        background: $light-gray;
+    }
+}

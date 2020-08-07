@@ -79,7 +79,7 @@
 
                             {% block component_product_box_name %}
                                 <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-                                   class="product-name"
+                                   class="product-title"
                                    title="{{ name }}">
                                     {{ name }}
                                 </a>
@@ -87,7 +87,7 @@
 
                             {% block component_product_box_description %}
                                 <div class="product-description">
-                                    {{ product.translated.description|striptags|raw }}
+                                    {{ product.translated.customFields.kurzbeschreibung_text|striptags|raw }}
                                 </div>
                             {% endblock %}
 

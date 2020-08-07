@@ -1,0 +1,32 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+
+{% block page_checkout_confirm %}
+    {% block page_checkout_confirm_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_alerts %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_address %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_payment_shipping %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_tos %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_product_table %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_hidden_line_items_information %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

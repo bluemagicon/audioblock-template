@@ -1,6 +1,8 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
  {% block base_header %}
+     {% set isHMRMode = false %}
+
      {{ parent() }}
 
      <div class="contact-sidebar">

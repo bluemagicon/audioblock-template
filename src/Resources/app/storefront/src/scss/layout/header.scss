@@ -2,14 +2,19 @@
     background: #000;
     .header-logo-main{
         max-width: 200px;
-        img{
-            width: 100%;
+        .header-logo-main-link{
+            img{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
         }
     }
     .dropdown-menu{
         background: #fff;
     }
     .header-cart-total{
+        color: #fff;
     }
     .header-actions-col{
         .icon{
@@ -18,5 +23,6 @@
             color: #fff;
         }
     }
+
 
 }

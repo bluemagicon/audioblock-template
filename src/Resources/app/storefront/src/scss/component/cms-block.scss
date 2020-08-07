@@ -66,3 +66,42 @@
         }
     }
 }
+
+/*** INTRO-TEXT ***/
+.cms-block-text-hero{
+    max-width: 800px;
+    margin: 0 auto;
+    .cms-element-text {
+        h1{
+            font-size: 3rem;
+            margin-bottom: 30px;
+            position: relative;
+            i{
+                background: #fff;
+                position: relative;
+                z-index: 9;
+                padding: 0 20px;
+                font-style: normal;
+            }
+        }
+        h1:after{
+            content: "";
+            position: absolute;
+            background: $primary-color;
+            width: 100%;
+            height: 1px;
+            left: 0px;
+            top: 20px;
+        }
+        h3{
+            color: $secondary-color;
+            font-family: $text-font;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        hr{
+            display: none;
+        }
+    }
+}

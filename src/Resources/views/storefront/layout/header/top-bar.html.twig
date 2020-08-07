@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{% block layout_header_top_bar %}
+    <div class="top-bar d-none d-lg-block">
+        <nav class="top-bar-nav">
+            <a class="lnk-haendler-login" href="#"><i class="fas fa-user-lock"></i><span>Händler-Login</span></a>
+            {{ parent() }}
+        </nav>
+    </div>
+{% endblock %}
