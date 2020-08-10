@@ -1,5 +1,25 @@
 .product-detail {
     padding-top: 50px;
+
+    .ask-merchant-wrapper{
+        background: $light-gray;
+        padding: 20px;
+        strong{
+            font-family: "bebas-neue", sans-serif;
+            font-size: 22px;
+            padding: 0 0 2px 0;
+            margin-bottom: 10px;
+            color: #000;
+            border-bottom: 1px solid #bcc1c7;
+            display: block;
+            font-weight: normal;
+        }
+        .btn{
+            display: block;
+            margin-top: 10px;
+        }
+    }
+
     .product-detail-name{
         color: $headline-color;
     }
