@@ -45,7 +45,21 @@
         </a>
     </li>
 
-    <!-- 04: GARANTIE -->
+    <!-- 04: TESTS -->
+    <li class="nav-item">
+        <a class="nav-link product-detail-tab-navigation-link"
+           id="tests-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#tests-tab-desc"
+           role="tab"
+           aria-controls="tests-tab-pane"
+           aria-selected="false">
+            {{ "detail.tabsTests"|trans|sw_sanitize }}
+        </a>
+    </li>
+
+    <!-- 05: GARANTIE -->
     <li class="nav-item">
         <a class="nav-link product-detail-tab-navigation-link"
            id="garantie-tab"
@@ -59,19 +73,7 @@
         </a>
     </li>
 
-    <!-- 05: TESTS -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="tests-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#tests-tab-desc"
-           role="tab"
-           aria-controls="tests-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsTests"|trans|sw_sanitize }}
-        </a>
-    </li>
+
 
     <!-- 05: BEWERTUNGEN -->
     <li class="nav-item">
@@ -116,20 +118,20 @@
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/service.html.twig' %}
     </div>
 
-    <!-- 04: Garantie -->
-    <div class="tab-pane fade show"
-         id="garantie-tab-desc"
-         role="tabpanel"
-         aria-labelledby="garantie-data-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/garantie.html.twig' %}
-    </div>
-
-    <!-- 05: Tests -->
+    <!-- 04: Tests -->
     <div class="tab-pane fade show"
          id="tests-tab-desc"
          role="tabpanel"
          aria-labelledby="tests-data-tab">
         {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/tests.html.twig' %}
+    </div>
+
+    <!-- 05: Garantie -->
+    <div class="tab-pane fade show"
+         id="garantie-tab-desc"
+         role="tabpanel"
+         aria-labelledby="garantie-data-tab">
+        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/garantie.html.twig' %}
     </div>
 
     <!-- 06: BEWERTUNGEN -->
