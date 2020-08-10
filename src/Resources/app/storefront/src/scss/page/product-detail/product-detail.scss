@@ -108,5 +108,17 @@
         }
     }
 }
-
+#tests-tab-desc{
+    .product-detail-tests{
+        display: flex;
+        align-items: center;
+        .img-wrapper{
+            width: 30%;
+            margin-right: 6.6666%;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
 
