@@ -10,6 +10,7 @@ html, body{
     font-weight: 400;
     font-size: 1rem;
     color: $font-color;
+    hyphens: auto;
 }
 h1,
 h2,
@@ -21,6 +22,7 @@ h6{
     font-style: normal;
     font-weight: 400;
     color: $headline-color;
+    line-height: 1.1;
 }
 a{
     color: $font-color;
