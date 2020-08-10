@@ -54,3 +54,20 @@
         }
     }
 }
+@media(max-width: 768px){
+    .cms-element-moorl-merchant-finder{
+        .element-content{
+            .map-box{
+                height: 350px;
+            }
+            .list-group{
+                display: block !important;
+                height: 400px;
+                overflow-y: scroll;
+                .moorl-merchant-finder-result-item{
+                    display: block;
+                }
+            }
+        }
+    }
+}
