@@ -105,3 +105,19 @@
         }
     }
 }
+
+@media(max-width: 576px){
+    .cms-block-text-hero{
+        .cms-element-text{
+            h1{
+                &:after{
+                    display: none;
+                }
+                i{
+                    padding: 0;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
