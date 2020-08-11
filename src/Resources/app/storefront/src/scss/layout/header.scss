@@ -26,3 +26,12 @@
 
 
 }
+@media(max-width: 768px){
+    .header-minimal {
+        .header-logo-main{
+            a.header-logo-main-link{
+                width: 100% !important;
+            }
+        }
+    }
+}

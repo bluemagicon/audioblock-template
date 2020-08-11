@@ -58,4 +58,15 @@
         }
     }
 }
-
+@media(max-width: 768px){
+    .product-detail-specifications{
+        ul{
+            li{
+                b{
+                    display: block;
+                    width: inherit;
+                }
+            }
+        }
+    }
+}
