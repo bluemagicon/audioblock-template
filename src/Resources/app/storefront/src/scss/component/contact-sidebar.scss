@@ -50,8 +50,29 @@
 .contact-sidebar:hover{
     right: 0px;
 }
+.contact-sidebar-link{
+    display: none;
+}
 @media(max-width: 992px){
     .contact-sidebar{
+        display: none;
+    }
+    .contact-sidebar-link{
+        display: block;
+        position: absolute;
         top: 0;
+        right: 0;
+        z-index: 999;
+        &::before{
+            content: '';
+            display: block;
+            height: 60px;
+            width: 60px;
+            background-color: #000;
+            background-image: url('/bundles/audioblock/assets/img/phone.svg');
+            background-size: 35px auto;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
 }
