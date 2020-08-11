@@ -62,9 +62,10 @@
     .product-detail-specifications{
         ul{
             li{
+                display: block;
                 b{
                     display: block;
-                    width: inherit;
+                    width: 100%;
                 }
             }
         }
