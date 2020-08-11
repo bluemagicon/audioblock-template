@@ -142,3 +142,16 @@
     }
 }
 
+@media(max-width: 992px){
+    .product-detail{
+        .product-detail-description-text{
+            ul{
+                display: block;
+                overflow: inherit;
+                li{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
