@@ -50,3 +50,9 @@
 .contact-sidebar:hover{
     right: 0px;
 }
+@media(max-width: 992px){
+    .contact-sidebar{
+        position: absolute;
+        top: 0;
+    }
+}
