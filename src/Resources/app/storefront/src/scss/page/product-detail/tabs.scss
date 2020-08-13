@@ -58,4 +58,16 @@
         }
     }
 }
-
+@media(max-width: 768px){
+    .product-detail-specifications{
+        ul{
+            li{
+                display: block;
+                b{
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

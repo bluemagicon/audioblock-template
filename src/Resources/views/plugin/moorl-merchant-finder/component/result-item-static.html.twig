@@ -7,11 +7,6 @@
     style="background-image:url({{ merchant.media.url }})" id="{{ merchant.id }}"
     class="list-group-item moorl-merchant-finder-result-item display-mode-{{ displayMode }}">
 
-    {% if merchant.highlight %}
-        <img class="siegel-fachhaendler"
-             src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
-    {% endif %}
-
     <div class="row form-row">
         <div class="col">
             {% block element_moorl_merchant_finder_result_title %}
@@ -98,6 +93,11 @@
                 </div>
             {% endblock %}
         </div>
+    {% endif %}
+
+    {% if merchant.highlight %}
+        <img class="siegel-fachhaendler"
+             src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
     {% endif %}
 
     <div class="mt-2">
