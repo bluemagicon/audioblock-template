@@ -132,9 +132,11 @@
     .product-detail-tests{
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         .img-wrapper{
             width: 30%;
-            margin-right: 6.6666%;
+            max-width: 260px;
+            margin-right: 100px;
             &:last-child{
                 margin-right: 0;
             }

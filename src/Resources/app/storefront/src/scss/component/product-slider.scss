@@ -1,0 +1,11 @@
+.product-slider-container {
+    display: flex;
+
+    .product-box {
+        padding-bottom: 100px;
+        .listing-button-price-wrapper {
+            position: absolute;
+            bottom: 15px;
+        }
+    }
+}

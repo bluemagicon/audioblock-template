@@ -39,7 +39,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 //@import 'component/backdrop';
 //@import 'component/base-slider';
 //@import 'component/image-slider';
-//@import 'component/product-slider';
+@import 'component/product-slider';
 @import 'component/gallery-slider';
 //@import 'component/magnifier';
 //@import 'component/zoom-modal';
@@ -129,12 +129,33 @@ https://sass-guidelin.es/#the-7-1-pattern
 
 
 /*** Weiß ich noch nicht ***/
+.product-box{
+    .card-body{
+        .product-info{
+            .button-1{
+                display: inline-block;
+                margin-top: 20px;
+            }
+            .product-rating{
+
+            }
+            .product-title{
+                font-family: $headline-font;
+                color: $headline-color;
+                font-size: 30px;
+            }
+        }
+
+    }
+}
+
+
 .product-slider-item{
     .product-price-unit{
         display: none !important;
     }
     .product-description{
-        height: 72px !important;
+        height: auto !important;
     }
     .product-price-info{
         margin-top: 25px !important;

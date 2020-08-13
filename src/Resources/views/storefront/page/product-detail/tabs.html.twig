@@ -1,6 +1,5 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
 
-
 {% block page_product_detail_tabs_navigation_description %}
 
     <!-- 01: BESCHREIBUNG -->
@@ -73,8 +72,6 @@
         </a>
     </li>
 
-
-
     <!-- 05: BEWERTUNGEN -->
     <li class="nav-item">
         <a class="nav-link product-detail-tab-navigation-link"
@@ -85,7 +82,7 @@
            role="tab"
            aria-controls="reviews-tab-pane"
            aria-selected="false">
-            {{ "detail.tabsReview"|trans|sw_sanitize }}
+            {{ "detail.tabsReview"|trans|sw_sanitize }} ({{ page.reviews.totalReviews }})
         </a>
     </li>
 
