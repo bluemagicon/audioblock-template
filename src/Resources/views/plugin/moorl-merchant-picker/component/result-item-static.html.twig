@@ -1,0 +1,94 @@
+<input id="radio-{{ merchant.id }}" class="d-none" type="radio" name="merchant" value="{{ merchant.id }}">
+
+<label for="radio-{{ merchant.id }}" class="list-group-item moorl-merchant-finder-result-item"
+       style="background-image:url({{ merchant.media.url }})" id="{{ merchant.id }}">
+    <div class="row form-row">
+        <div class="col">
+            {% block element_moorl_merchant_finder_result_title %}
+                <h4 class="">
+                    {{ merchant.company }}
+                </h4>
+            {% endblock %}
+
+            <div class="row form-row justify-content-between">
+                {% block element_moorl_merchant_finder_result_address %}
+                    <div class="col-6">
+                        <p class="">{{ merchant.street }} {{ merchant.streetNumber }}
+                            <br>{{ merchant.zipcode }} {{ merchant.city }}
+                            {% if merchant.country %}
+                                {{ merchant.country }}
+                            {% endif %}
+                        </p>
+
+                        {% if merchant.phoneNumber %}
+                            <p class="">{{ "moorl-merchant-finder.phoneNumber"|trans }} {{ merchant.phoneNumber }}</p>
+                        {% endif %}
+
+                        <span class="merchant-distance {% if merchant.distance %} visible{% endif %}">{{ "moorl-merchant-finder.distance"|trans }} : {{ merchant.distance }} {{ "moorl-merchant-finder.km"|trans }}</span>
+
+                    </div>
+                {% endblock %}
+
+                {% block element_moorl_merchant_finder_result_description %}
+                    <div class="col-6">
+                        {% if merchant.description %}
+                            <b>{{ "moorl-merchant-finder.description"|trans }}</b>
+                            <p style="white-space: pre-line">{{ merchant.description }}</p>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="row form-row">
+        {% block element_moorl_merchant_finder_result_tags %}
+            {% if merchant.tags.length %}
+                <div class="col-6">
+                    <i class="fas fa-tags"></i> <b>{{ "moorl-merchant-finder.tags"|trans }}</b>
+                    <div class="tags">
+                        {% for tag in merchant.tags %}
+                            <span>{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% block element_moorl_merchant_finder_result_categories %}
+            {% if merchant.categories.length %}
+                <div class="col-6">
+                    <i class="fas fa-tshirt"></i> <b>{{ "moorl-merchant-finder.categories"|trans }}</b>
+                    <div class="categories">
+                        {% for category in merchant.categories %}
+                            <span>{{ category.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+
+    {% if merchant.productManufacturers.length %}
+        <div class="row form-row">
+            {% block element_moorl_merchant_finder_result_manufacturers %}
+                <div class="col-12">
+                    <i class="fas fa-industry"></i> <b>{{ "moorl-merchant-finder.manufacturers"|trans }}</b>
+                    <div class="manufacturers">
+                        {% for manufacturer in merchant.productManufacturers.length %}
+                            {% if manufacturer.media %}
+                                <img src="{{ manufacturer.media.url }}" title="{{ manufacturer.name }}">
+                            {% else %}
+                                <span>{{ manufacturer.name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {% if merchant.highlight %}
+        <img class="siegel-fachhaendler"
+             src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
+    {% endif %}
+</label>
