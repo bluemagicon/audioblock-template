@@ -2,42 +2,116 @@
     background: #000;
     box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.5);
     padding: 30px 0;
-    .footer-logo-wrapper{
-        img{
-            width: 250px;
-        }
-    }
     .row{
         justify-content: space-between !important;
-    }
-
-    .footer-col{
-        ul{
-            list-style: none;
-            margin-bottom: 15px;
-            padding: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding: 30px 0;
+        &:first-child{
+            padding-top: 0;
         }
-        ul:last-child{
-            margin-bottom: 0;
+        &:last-child{
+            padding-bottom: 0;
+            border-bottom: 0;
+            align-items: center;
         }
-        h4,
-        a,
-        li{
-            color: #fff;
-
-        }
-    }
-    .footer-socials{
-        .icons-wrapper{
+        .footer-logo-wrapper{
             display: flex;
-            a{
-                text-align: center;
-                margin-right: 10px;
+            justify-content: center;
+            img{
+                width: 250px;
+            }
+        }
+        .footer-col{
+            text-align: center;
+            ul{
+                list-style: none;
+                margin-bottom: 15px;
+                padding: 0;
+            }
+            ul:last-child{
+                margin-bottom: 0;
+            }
+            h4,
+            a,
+            li{
+                color: #fff;
+            }
+            &.footer-zahlungsarten{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    li {
+                        a{
+                            display: block;
+                            height: 61px;
+                            width: 85px;
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            margin-right: 5px;
+                            &.paypal{
+                                background-image: url('../assets/img/paypal.png');
+                            }
+                            &.klarna{
+                                background-image: url('../assets/img/klarna-sofort-alt.png');
+                            }
+                            &.sepa{
+                                background-image: url('../assets/img/sepa.png');
+                            }
+                        }
+                    }
+                }
+            }
+            &.footer-versandarten{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    li{
+                        a{
+                            display: block;
+                            height: 61px;
+                            width: 61px;
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            margin-right: 15px;
+                            &.standard-lieferung{
+                                background-image: url('../assets/img/standard-lieferung-white.svg');
+                            }
+                            &.pickup-and-deliver{
+                                background-image: url('../assets/img/pickup-and-deliver-white.svg');
+                            }
+                            &.click-and-collect{
+                                background-image: url('../assets/img/click-and-collect-white.svg');
+                            }
+                        }
+                    }
+                }
+            }
+            &.footer-copyright{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    color: #fff;
+                }
+            }
+            &.footer-socials{
+                .icons-wrapper{
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        text-align: center;
+                        margin-right: 20px;
 
-                .img-wrapper {
-                    width: 35px;
-                    display: block;
-                    margin: 0 auto 3px auto;
+                        .img-wrapper {
+                            width: 35px;
+                            display: block;
+                        }
+                    }
                 }
             }
         }
