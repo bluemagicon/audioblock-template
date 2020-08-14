@@ -18,11 +18,11 @@
             display: flex;
             justify-content: center;
             img{
-                width: 250px;
+                width: 200px;
             }
         }
         .footer-col{
-            text-align: center;
+
             ul{
                 list-style: none;
                 margin-bottom: 15px;
@@ -40,12 +40,12 @@
                 ul{
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    max-width: 252px;
                     li {
                         a{
                             display: block;
-                            height: 61px;
-                            width: 85px;
+                            height: 57px;
+                            width: 79px;
                             background-position: center;
                             background-size: contain;
                             background-repeat: no-repeat;
@@ -54,10 +54,19 @@
                                 background-image: url('../assets/img/paypal.png');
                             }
                             &.klarna{
-                                background-image: url('../assets/img/klarna-sofort-alt.png');
+                                background-image: url('../assets/img/klarna-rechnung.png');
                             }
                             &.sepa{
                                 background-image: url('../assets/img/sepa.png');
+                            }
+                            &.kreditkarte{
+                                background-image: url('../assets/img/visa.png');
+                            }
+                            &.master{
+                                background-image: url('../assets/img/mastercard.png');
+                            }
+                            &.vorkasse{
+                                background-image: url('../assets/img/moneyorder.png');
                             }
                         }
                     }
@@ -67,13 +76,12 @@
                 ul{
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
                     align-items: center;
                     li{
                         a{
                             display: block;
-                            height: 61px;
-                            width: 61px;
+                            height: 57px;
+                            width: 57px;
                             background-position: center;
                             background-size: contain;
                             background-repeat: no-repeat;
@@ -93,8 +101,7 @@
             }
             &.footer-copyright{
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                justify-content: flex-end;
                 span{
                     color: #fff;
                 }
@@ -102,7 +109,7 @@
             &.footer-socials{
                 .icons-wrapper{
                     display: flex;
-                    justify-content: center;
+                    align-items: center;
                     a{
                         text-align: center;
                         margin-right: 20px;
@@ -111,23 +118,63 @@
                             width: 35px;
                             display: block;
                         }
+                        &.youtube{
+                            .img-wrapper{
+                                width: 43px;
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
-@media(max-width: 1200px){
+@media(max-width: 992px){
     .footer-main{
-        text-align: center;
-        .footer-col{
-            margin-bottom: 40px;
-        }
-        .footer-socials{
-            .icons-wrapper{
-                justify-content: center;
+        .row{
+            .footer-logo-wrapper{
+                margin-bottom: 35px;
             }
-            margin-botom: 0;
+            .footer-col{
+                &.footer-copyright{
+                    text-align: center;
+                    justify-content: center;
+                }
+                &.footer-socials{
+                    .icons-wrapper{
+                        justify-content: center;
+                    }
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 768px){
+    .footer-main{
+        .row{
+            .footer-col{
+                text-align: center;
+                margin-bottom: 35px;
+                justify-content: center !important;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                ul{
+                    justify-content: center !important;
+                }
+                &.footer-zahlungsarten{
+                    ul{
+                        max-width: inherit;
+                    }
+                }
+                &.footer-socials{
+                    .icons-wrapper{
+                        justify-content: center;
+                    }
+                }
+            }
         }
     }
 }
