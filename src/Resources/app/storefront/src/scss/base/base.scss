@@ -37,7 +37,12 @@ a{
 }
 
 /*** CONTAINER & SECTIONS ***/
+.is-act-index.is-ctl-product .container-main,
 .container-main{
+    padding: 50px 0;
+}
+.is-act-home .container-main,
+.is-act-index .container-main{
     padding: 0;
 }
 .cms-section{
