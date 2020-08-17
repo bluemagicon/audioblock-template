@@ -1,10 +1,10 @@
 .cms-element-moorl-merchant-finder{
     .modal-body{
         .moorl-merchant-finder-result-item {
-            background-size: contain;
-            background-repeat: no-repeat;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
             position: relative;
-            background-position: top right;
+            background-position: top right !important;
 
             .highlight{
                 color: $secondary-color;

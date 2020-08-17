@@ -33,9 +33,6 @@
     .product-detail-manufacturer {
         display: none;
     }
-    .product-detail-ordernumber-container{
-        display: none;
-    }
     .total-price {
         font-size: 26px;
         font-weight: 700;
@@ -87,7 +84,7 @@
                 width: 6px;
                 height: 6px;
                 border-radius: 50%;
-                left: 0;
+                left: 0px;
                 top: 8px;
             }
         }
