@@ -1,143 +1,181 @@
-{% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+{% block page_product_detail_tabs_inner %}
+    <div class="card card-tabs">
+        {% block page_product_detail_tabs_navigation %}
+            <div class="card-header product-detail-tab-navigation">
+                {% block page_product_detail_tabs_navigation_container %}
+                    <ul class="nav nav-tabs product-detail-tab-navigation-list"
+                        id="product-detail-tabs"
+                        role="tablist">
+                        {% block page_product_detail_tabs_navigation_description %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
+                                   id="description-tab"
+                                   data-toggle="tab"
+                                   data-offcanvas-tabs="true"
+                                   href="#description-tab-pane"
+                                   role="tab"
+                                   aria-controls="description-tab-pane"
+                                   aria-selected="true">
+                                    <span>{{ "detail.tabsDescription"|trans|sw_sanitize }}</span>
+                                    <span class="product-detail-tab-navigation-icon">
+                                        {% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+                                    </span>
+                                    {% if page.product.translated.description|length > 0 %}
+                                        <span class="product-detail-tab-preview">
+                                            {{ page.product.translated.description|raw|striptags|u.truncate(125, '…') }}
 
-{% block page_product_detail_tabs_navigation_description %}
+                                            {# truncate always cuts down the length to 125 characters.
+                                               So it will only shorten the string if it exceeds 125 chars.
+                                               Therefor, only show the button when the length of the text is
+                                               greater or equal then 126 characters. #}
+                                            {% if page.product.translated.description|length >= 126 %}
+                                                <span
+                                                    class="product-detail-tab-preview-more">{{ "detail.tabsPreviewMore"|trans|sw_sanitize }}</span>
+                                            {% endif %}
+                                        </span>
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endblock %}
 
-    <!-- 01: BESCHREIBUNG -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link active"
-           id="highlights-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#highlights-tab-desc"
-           role="tab"
-           aria-controls="description-tab-pane"
-           aria-selected="true">
-            {{ "detail.tabsDescription"|trans|sw_sanitize }}
-        </a>
-    </li>
+                        <!-- 02: SPEZIFIKATIONEN -->
+                        <li class="nav-item">
+                            <a class="nav-link product-detail-tab-navigation-link"
+                               id="technical-data-tab"
+                               data-toggle="tab"
+                               data-offcanvas-tabs="true"
+                               href="#technical-data-tab-desc"
+                               role="tab"
+                               aria-controls="description-tab-pane"
+                               aria-selected="false">
+                                {{ "detail.tabsSpecifications"|trans|sw_sanitize }}
+                            </a>
+                        </li>
 
-    <!-- 02: SPEZIFIKATIONEN -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="technical-data-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#technical-data-tab-desc"
-           role="tab"
-           aria-controls="description-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsSpecifications"|trans|sw_sanitize }}
-        </a>
-    </li>
+                        <!-- 03: DOWNLOADS -->
+                        <li class="nav-item">
+                            <a class="nav-link product-detail-tab-navigation-link"
+                               id="service-tab"
+                               data-toggle="tab"
+                               data-offcanvas-tabs="true"
+                               href="#service-tab-desc"
+                               role="tab"
+                               aria-controls="service-tab-pane"
+                               aria-selected="false">
+                                {{ "detail.tabsDownloads"|trans|sw_sanitize }}
+                            </a>
+                        </li>
 
-    <!-- 03: DOWNLOADS -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="service-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#service-tab-desc"
-           role="tab"
-           aria-controls="service-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsDownloads"|trans|sw_sanitize }}
-        </a>
-    </li>
+                        <!-- 04: TESTS -->
+                        <li class="nav-item">
+                            <a class="nav-link product-detail-tab-navigation-link"
+                               id="tests-tab"
+                               data-toggle="tab"
+                               data-offcanvas-tabs="true"
+                               href="#tests-tab-desc"
+                               role="tab"
+                               aria-controls="tests-tab-pane"
+                               aria-selected="false">
+                                {{ "detail.tabsTests"|trans|sw_sanitize }}
+                            </a>
+                        </li>
 
-    <!-- 04: TESTS -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="tests-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#tests-tab-desc"
-           role="tab"
-           aria-controls="tests-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsTests"|trans|sw_sanitize }}
-        </a>
-    </li>
+                        <!-- 05: GARANTIE -->
+                        <li class="nav-item">
+                            <a class="nav-link product-detail-tab-navigation-link"
+                               id="garantie-tab"
+                               data-toggle="tab"
+                               data-offcanvas-tabs="true"
+                               href="#garantie-tab-desc"
+                               role="tab"
+                               aria-controls="garantie-tab-pane"
+                               aria-selected="false">
+                                {{ "detail.tabsWarranty"|trans|sw_sanitize }}
+                            </a>
+                        </li>
 
-    <!-- 05: GARANTIE -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="garantie-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#garantie-tab-desc"
-           role="tab"
-           aria-controls="garantie-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsWarranty"|trans|sw_sanitize }}
-        </a>
-    </li>
+                        {% block page_product_detail_tabs_navigation_review %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
+                                   id="review-tab"
+                                   data-toggle="tab"
+                                   data-offcanvas-tabs="true"
+                                   href="#review-tab-pane"
+                                   role="tab"
+                                   aria-controls="review-tab-pane"
+                                   aria-selected="true">
+                                    {{ "detail.tabsReview"|trans|sw_sanitize }}
+                                    <span class="product-detail-tab-navigation-icon">
+                                            {% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+                                        </span>
+                                </a>
+                            </li>
+                        {% endblock %}
+                    </ul>
+                {% endblock %}
+            </div>
+        {% endblock %}
 
-    <!-- 05: BEWERTUNGEN -->
-    <li class="nav-item">
-        <a class="nav-link product-detail-tab-navigation-link"
-           id="reviews-tab"
-           data-toggle="tab"
-           data-offcanvas-tabs="true"
-           href="#reviews-tab-desc"
-           role="tab"
-           aria-controls="reviews-tab-pane"
-           aria-selected="false">
-            {{ "detail.tabsReview"|trans|sw_sanitize }} ({{ page.reviews.totalReviews }})
-        </a>
-    </li>
-
-    {% block page_product_detail_tabs_navigation_review %}{% endblock %}
-{% endblock %}
+        {% block page_product_detail_tabs_content %}
+            <div class="product-detail-tabs-content card-body">
+                {% block page_product_detail_tabs_content_container %}
+                    <div class="tab-content">
+                        {% block page_product_detail_tabs_content_description %}
+                            <div
+                                class="tab-pane fade show {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %}"
+                                id="description-tab-pane"
+                                role="tabpanel"
+                                aria-labelledby="description-tab">
+                                {% sw_include '@Storefront/storefront/page/product-detail/description.html.twig' %}
+                            </div>
+                        {% endblock %}
 
 
-{% block page_product_detail_tabs_content_description %}
-    <!-- 01: BESCHREIBUNG -->
-    <div class="tab-pane fade show active"
-         id="highlights-tab-desc"
-         role="tabpanel"
-         aria-labelledby="highlights-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/highlights.html.twig' %}
+                        <!-- 02: SPEZIFIKATIONEN -->
+                        <div class="tab-pane fade show"
+                             id="technical-data-tab-desc"
+                             role="tabpanel"
+                             aria-labelledby="technical-data-tab">
+                            {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/technical-data.html.twig' %}
+                        </div>
+
+                        <!-- 03: DOWNLOADS -->
+                        <div class="tab-pane fade show"
+                             id="service-tab-desc"
+                             role="tabpanel"
+                             aria-labelledby="service-data-tab">
+                            {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/service.html.twig' %}
+                        </div>
+
+                        <!-- 04: Tests -->
+                        <div class="tab-pane fade show"
+                             id="tests-tab-desc"
+                             role="tabpanel"
+                             aria-labelledby="tests-data-tab">
+                            {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/tests.html.twig' %}
+                        </div>
+
+                        <!-- 05: Garantie -->
+                        <div class="tab-pane fade show"
+                             id="garantie-tab-desc"
+                             role="tabpanel"
+                             aria-labelledby="garantie-data-tab">
+                            {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/garantie.html.twig' %}
+                        </div>
+
+
+                        {% block page_product_detail_tabs_content_review %}
+                            <div
+                                class="tab-pane fade show {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %}"
+                                id="review-tab-pane"
+                                role="tabpanel"
+                                aria-labelledby="review-tab">
+                                {% sw_include '@Storefront/storefront/page/product-detail/review/review.html.twig' with {'reviews': page.reviews} %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
     </div>
-
-    <!-- 02: SPEZIFIKATIONEN -->
-    <div class="tab-pane fade show"
-         id="technical-data-tab-desc"
-         role="tabpanel"
-         aria-labelledby="technical-data-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/technical-data.html.twig' %}
-    </div>
-
-    <!-- 03: DOWNLOADS -->
-    <div class="tab-pane fade show"
-         id="service-tab-desc"
-         role="tabpanel"
-         aria-labelledby="service-data-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/service.html.twig' %}
-    </div>
-
-    <!-- 04: Tests -->
-    <div class="tab-pane fade show"
-         id="tests-tab-desc"
-         role="tabpanel"
-         aria-labelledby="tests-data-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/tests.html.twig' %}
-    </div>
-
-    <!-- 05: Garantie -->
-    <div class="tab-pane fade show"
-         id="garantie-tab-desc"
-         role="tabpanel"
-         aria-labelledby="garantie-data-tab">
-        {% sw_include '@Audioblock/AudioblockTemplate/page/product-detail/garantie.html.twig' %}
-    </div>
-
-    <!-- 06: BEWERTUNGEN -->
-    <div class="tab-pane fade show"
-         id="reviews-tab-desc"
-         role="tabpanel"
-         aria-labelledby="reviews-tab">
-        {% sw_include '@Storefront/storefront/page/product-detail/review/review.html.twig' with {'reviews': page.reviews} %}
-    </div>
-
-
 {% endblock %}
