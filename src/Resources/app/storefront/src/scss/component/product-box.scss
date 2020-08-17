@@ -2,6 +2,7 @@
 .cms-listing-col{
     .product-box{
         border: 0;
+        margin-bottom: 50px;
         .card-body{
             padding: 0;
             display: flex;
@@ -32,6 +33,8 @@
                 .product-description{
                     height: auto;
                     margin-top: 0;
+                    font-size: 18px;
+                    line-height: 1.4em;
                 }
                 .product-rating{
                     display: none;
@@ -44,6 +47,8 @@
                     font-family: $headline-font;
                     overflow: inherit;
                     font-weight: 300;
+                    margin-bottom: 20px;
+                    display: block;
                 }
                 .listing-button-price-wrapper{
                     display: flex;
@@ -56,6 +61,8 @@
                     }
                     .product-price{
                         margin-top: 0px;
+                        font-size: 20px;
+
                     }
                     .product-price-info{
                         margin: 0;

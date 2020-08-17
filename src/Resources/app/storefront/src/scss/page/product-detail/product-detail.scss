@@ -1,4 +1,11 @@
 .product-detail {
+
+    .product-detail-reviews{
+        a{
+            text-decoration: none !important;
+        }
+    }
+
     .ask-merchant-wrapper{
         background: $light-gray;
         padding: 20px;

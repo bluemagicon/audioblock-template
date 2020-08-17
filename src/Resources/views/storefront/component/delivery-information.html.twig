@@ -3,6 +3,7 @@
     {% set product = page.product %}
 
     <div class="product-delivery-information">
+
         {% if product.shippingFree %}
             {% block component_delivery_information_shipping_free %}
                 <p class="delivery-information delivery-shipping-free">
@@ -58,6 +59,12 @@
                     '%restockTime%': product.restockTime,
                     '%name%': product.deliveryTime.translation('name')
                 })|sw_sanitize }}
+            </p>
+
+        {% elseif product.availableStock < product.minPurchase %}
+            <p class="delivery-information">
+                <span class="delivery-status-indicator bg-danger"></span>
+                {{ "detail.soldOut"|trans|sw_sanitize }}
             </p>
         {% endif %}
     </div>
