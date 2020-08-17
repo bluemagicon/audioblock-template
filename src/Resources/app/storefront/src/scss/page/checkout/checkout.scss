@@ -43,10 +43,14 @@
             }
         }
     }
+    .confirm-payment,
+    .confirm-shipping{
+        .custom-control-label{
+            display: flex;
+        }
+    }
+
 }
-
-
-
 
 /*** MODAL-DIALOG FÜR ZAHLUNGSARTEN & VERSANDARTEN ***/
 .confirm-payment-modal,

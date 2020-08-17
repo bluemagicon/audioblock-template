@@ -15,7 +15,21 @@
     {% endblock %}
 
     {% block page_checkout_confirm_payment_shipping %}
-        {{ parent() }}
+        <div class="confirm-payment-shipping">
+            <div class="row">
+                {% block page_checkout_confirm_payment %}
+                    <div class="col-12 confirm-payment">
+                        {% sw_include '@Storefront/storefront/page/checkout/confirm/confirm-payment.html.twig' %}
+                    </div>
+                {% endblock %}
+
+                {% block page_checkout_confirm_shipping %}
+                    <div class="col-12 confirm-shipping">
+                        {% sw_include '@Storefront/storefront/page/checkout/confirm/confirm-shipping.html.twig' %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
     {% endblock %}
 
     {% block page_checkout_confirm_tos %}
