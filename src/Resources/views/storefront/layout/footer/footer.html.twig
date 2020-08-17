@@ -2,33 +2,8 @@
 
 {% block layout_footer_inner_container %}
     <div class="row">
-        <div class="footer-logo-wrapper footer-col col-12 col-lg-3">
-            <img src="{{ asset('assets/img/logo-audioblock-negativ.svg', '@Audioblock') }}">
-        </div>
-        <div class="footer-customers-menu footer-col col-sm-4 col-lg-2">
-            <h4>Für Kunden</h4>
-            <ul>
-                <li><a href="{{ path('frontend.account.home.page') }}">Mein Konto</a></li>
-                <li><a href="{{ path('frontend.newsletter.subscribe') }}">Newsletter</a></li>
-                <li><a href="#">Versandinformationen</a></li>
-                <li><a href="#">Zahlungsarten</a></li>
-                <li><a href="{{ path('frontend.checkout.cart.page') }}">Warenkorb</a></li>
-                <li><a href="#">Service</a></li>
-
-            </ul>
-        </div>
-        <div class="footer-legal-menu footer-col col-sm-4 col-lg-2">
-            <h4>Rechtliches</h4>
-            <ul>
-                <li><a href="#">Datenschutz</a></li>
-                <li><a href="#">Impressum</a></li>
-                <li><a href="#">AGB</a></li>
-                <li><a href="#">Garantie</a></li>
-                <li><a href="#">Batteriegesetzhinweise</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact footer-col col-sm-4 col-lg-2">
-            <h4>Kontakt</h4>
+        <div class="footer-contact footer-col col-md-4">
+            <h4>Beratung & Kontakt</h4>
             <ul>
                 <li>Audioblock GmbH</li>
                 <li>Auf der Striepe 3a</li>
@@ -39,22 +14,105 @@
                 <li><a href="tel:+49448492009010">+49 (0) 4484 - 920 090 10</a></li>
             </ul>
         </div>
-        <div class="footer-socials footer-col col-sm-12 col-lg-2">
-            <h4>Social Media</h4>
+        <div class="footer-customers-menu footer-col col-md-4">
+            <h4>Kundeninfos</h4>
+            <div class="two-col-menu-wrapper">
+                <ul>
+                    <li><a href="{{ path('frontend.account.home.page') }}">Mein Konto</a></li>
+                    <li><a href="{{ path('frontend.newsletter.subscribe') }}">Newsletter</a></li>
+                    <li><a href="#">Versand</a></li>
+                    <li><a href="#">Zahlungsarten</a></li>
+                    <li><a href="#">Widerruf</a></li>
+                    <li><a href="#">Garantie</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-legal-menu footer-col col-md-4">
+            <h4>Rechtliches</h4>
+            <ul>
+                <li><a href="#">AGB</a></li>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz</a></li>
+                <li><a href="#">Batteriegesetzhinweise</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer-zahlungsarten footer-col col-md-4">
+            <h4>Zahlungsarten</h4>
+            <ul>
+                <li>
+                    <a class="zahlungs-icon paypal" href="#"></a>
+                </li>
+                <li>
+                    <a class="zahlungs-icon klarna" href="#"></a>
+                </li>
+                <li>
+                    <a class="zahlungs-icon sepa" href="#"></a>
+                </li>
+                <li>
+                    <a class="zahlungs-icon kreditkarte" href="#"></a>
+                </li>
+                <li>
+                    <a class="zahlungs-icon master" href="#"></a>
+                </li>
+                <li>
+                    <a class="zahlungs-icon vorkasse" href="#"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-sicherheit footer-col col-md-4">
+            <h4>Sicherheit</h4>
+        </div>
+        <div class="footer-versandarten footer-col col-md-4">
+            <h4>Versandarten</h4>
+            <ul>
+                <li>
+                    <a class="standard-lieferung" href="#"></a>
+                </li>
+                <li>
+                    <a class="pickup-and-deliver" href="#"></a>
+                </li>
+                <li>
+                    <a class="click-and-collect" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer-socials footer-col col-lg-3">
             <div class="icons-wrapper">
                 <a href="https://www.instagram.com/audioblock_official/?hl=de" target="_blank" class="social-icon-wrapper">
                     <div class="img-wrapper">
                         <img src="{{ asset('assets/img/instagram.svg', '@Audioblock') }}">
                     </div>
-                    Instagram
                 </a>
                 <a href="https://www.facebook.com/realaudioblock/" target="_blank" class="social-icon-wrapper">
                     <div class="img-wrapper">
                         <img src="{{ asset('assets/img/facebook.svg', '@Audioblock') }}">
                     </div>
-                    Facebook
+                </a>
+                <a href="https://www.youtube.com/channel/UCBMKc9P64fwsWM875fdb_7g" target="_blank" class="social-icon-wrapper youtube">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets/img/youtube.svg', '@Audioblock') }}">
+                    </div>
                 </a>
             </div>
+        </div>
+        <div class="footer-logo-wrapper footer-col col-lg-6">
+            <img src="{{ asset('assets/img/logo-audioblock-negativ.svg', '@Audioblock') }}">
+        </div>
+        <div class="footer-copyright footer-col col-lg-3">
+            {% set startYear = 2020 %}
+            {% set currentYear = now.year %}
+
+            {% if startYear == currentYear %}
+                {% set copyrightYears = startYear %}
+            {% else %}
+                {% set copyrightYears = startYear ~ ' - ' ~ currentYear %}
+            {% endif %}
+
+            <span>&copy; {{ copyrightYears }} Audioblock GmbH</span>
         </div>
     </div>
 {% endblock %}
