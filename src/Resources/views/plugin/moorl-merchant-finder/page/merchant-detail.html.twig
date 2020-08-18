@@ -1,0 +1,142 @@
+{% if merchant.cmsPage %}
+    <div class="cms-page">
+        {% sw_include "@Storefront/storefront/page/content/detail.html.twig" with {'cmsPage': merchant.cmsPage} %}
+    </div>
+{% else %}
+    <div class="row form-row">
+        <div class="col">
+            {% block element_moorl_merchant_finder_detail_description %}
+                <div class="merchant-detail-content">
+                    <h2>{{ merchant.company }}</h2>
+                    <p>Beratung & Service zählen zu den Stärken unserer First-Class Händler. Kommen Sie vorbei und lassen Sie sich kompetent über unsere Blockgeräte beraten.</p>
+                    <img class="siegel-fachhaendler" src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}" />
+                </div>
+                <div class="merchant-detail-footer">
+                    <div class="merchant-detail-footer-col">
+                        <h4>Adresse</h4>
+                        <ul>
+                            <li>{{ merchant.company }}</li>
+                            <li>{{ merchant.street }} {{ merchant.streetNumber }}</li>
+                            <li>{{ merchant.zipcode }} {{ merchant.city }}</li>
+                        </ul>
+                    </div>
+                    <div class="merchant-detail-footer-col">
+                        {% if merchant.phoneNumber %}
+                            <h4>Telefon</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:{{ merchant.phoneNumber }}">{{ merchant.phoneNumber }}</a>
+                                </li>
+                            </ul>
+                        {% endif %}
+                        {% if merchant.shopUrl %}
+                            <h4>Homepage</h4>
+                            <ul>
+                                <li>{{ merchant.shopUrl }}</li>
+                            </ul>
+                        {% endif %}
+                        {% if merchant.email %}
+                            <h4>E-Mail</h4>
+                            <ul>
+                                <li><a href="mailto:{{ merchant.email }}">{{ merchant.email }}</a></li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <div class="merchant-detail-footer-col">
+                        {% if merchant.openingHours %}
+                            <h4>Öffnungszeiten</h4>
+                            <p>{{ merchant.openingHours | nl2br }}</p>
+                        {% endif %}
+                        <div class="img-wrapper">
+                            <img class="siegel-fachhaendler" src="{{ asset('assets/img/logo-audioblock.svg', '@Audioblock') }}" />
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        {% block element_moorl_merchant_finder_detail_tags %}
+            {% if merchant.tags.length %}
+                <div class="col-6">
+                    <i class="fas fa-tags"></i> <b>{{ "moorl-merchant-finder.tags"|trans }}</b>
+                    <div class="tags">
+                        {% for tag in merchant.tags %}
+                            <span>{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% block element_moorl_merchant_finder_detail_categories %}
+            {% if merchant.categories.length %}
+                <div class="col-6">
+                    <i class="fas fa-tshirt"></i> <b>{{ "moorl-merchant-finder.categories"|trans }}</b>
+                    <div class="categories">
+                        {% for category in merchant.categories %}
+                            <span>{{ category.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+
+    {% if merchant.productManufacturers.length %}
+        <div class="row form-row">
+            {% block element_moorl_merchant_finder_detail_manufacturers %}
+                <div class="col-12">
+                    <i class="fas fa-industry"></i> <b>{{ "moorl-merchant-finder.manufacturers"|trans }}</b>
+                    <div class="manufacturers">
+                        {% for manufacturer in merchant.productManufacturers.length %}
+                            {% if manufacturer.media %}
+                                <img src="{{ manufacturer.media.url }}" title="{{ manufacturer.name }}">
+                            {% else %}
+                                <span>{{ manufacturer.name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    <div class="mt-2">
+        {% block element_moorl_merchant_finder_detail_button_merchant_url %}
+            {% if merchant.merchantUrl %}
+                <a href="{{ merchant.merchantUrl }}" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-info-circle"></i> {{ "moorl-merchant-finder.merchantUrl"|trans }}</a>
+            {% endif %}
+        {% endblock %}
+
+        {% block element_moorl_merchant_finder_detail_button_shop_url %}
+            {% if merchant.shopUrl %}
+                <a href="{{ merchant.shopUrl }}" target="_blank" class="btn btn-sm btn-light"><i class="fas fa-shopping-cart"></i> {{ "moorl-merchant-finder.shopUrl"|trans }}</a>
+            {% endif %}
+        {% endblock %}
+
+        {% block element_moorl_merchant_finder_detail_button_location %}
+            {# displayMode full is always with map #}
+            {% if displayMode == 'full' %}
+                {% if merchant.locationLon %}
+                    <a href="javascript:"
+                       data-location-lat="{{ merchant.locationLat }}"
+                       data-location-lon="{{ merchant.locationLon }}"
+                       data-item="{{ merchant.id }}"
+                       class="btn btn-sm btn-light">
+                        <i class="fas fa-map-pin"></i> {{ "moorl-merchant-finder.displayOnMap"|trans }}
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endblock %}
+
+        {% block element_moorl_merchant_finder_detail_button_cms %}
+            {% if merchant.cmsPageId %}
+                <a href="javascript:" data-trigger="#merchant_finder_more"
+                   data-url="{{ seoUrl('moorl.merchant-finder.merchant', {'merchantId':merchant.id}) }}"
+                   class="btn btn-sm btn-light">{{ "moorl-merchant-finder.more"|trans }}</a>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endif %}
