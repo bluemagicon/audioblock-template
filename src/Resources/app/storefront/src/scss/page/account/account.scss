@@ -26,3 +26,27 @@
     font-weight: 100;
     font-family: 'bebas-neue', sans-serif !important;
 }
+
+.login-advantages{
+    ul{
+        list-style: none;
+        padding-left: 0;
+        li{
+            padding-left: 20px;
+            position: relative;
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 5px;
+                left: 0;
+                height: 14px;
+                width: 14px;
+                background-image: url('../assets/img/tick.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}
