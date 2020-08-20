@@ -29,16 +29,16 @@
                                 </li>
                             </ul>
                         {% endif %}
-                        {% if merchant.merchantUrl %}
-                            <h4>Homepage</h4>
-                            <ul>
-                                <li>{{ merchant.merchantUrl }}</li>
-                            </ul>
-                        {% endif %}
                         {% if merchant.email %}
                             <h4>E-Mail</h4>
                             <ul>
                                 <li><a href="mailto:{{ merchant.email }}">{{ merchant.email }}</a></li>
+                            </ul>
+                        {% endif %}
+                        {% if merchant.merchantUrl %}
+                            <h4>Homepage</h4>
+                            <ul>
+                                <li><a href="https://{{ merchant.merchantUrl }}" target="_blank">{{ merchant.merchantUrl }}</a></li>
                             </ul>
                         {% endif %}
                     </div>
