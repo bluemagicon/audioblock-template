@@ -101,13 +101,6 @@
     {% endif %}
 
     <div class="mt-2">
-        {% block element_moorl_merchant_finder_result_button_merchant_url %}
-            {% if merchant.merchantUrl %}
-                <a href="{{ merchant.merchantUrl }}" target="_blank" class="button-1"><i
-                        class="fas fa-info-circle"></i> {{ "moorl-merchant-finder.merchantUrl"|trans }}</a>
-            {% endif %}
-        {% endblock %}
-
         {% block element_moorl_merchant_finder_result_button_cms %}
             {% if shopware.config.MoorlMerchantFinder.config.detailPage == 'popup' %}
                 <a href="javascript:" data-trigger="#merchant_finder_more"
