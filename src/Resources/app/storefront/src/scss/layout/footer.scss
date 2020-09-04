@@ -56,8 +56,8 @@
                             &.klarna{
                                 background-image: url('../assets/img/klarna-rechnung.png');
                             }
-                            &.sepa{
-                                background-image: url('../assets/img/sepa.png');
+                            &.sofort{
+                                background-image: url('../assets/img/sofort-ueberweisung.png');
                             }
                             &.kreditkarte{
                                 background-image: url('../assets/img/visa.png');
@@ -72,20 +72,25 @@
                     }
                 }
             }
+            &.footer-versand{
+                img{
+                    max-width: 155px;
+                }
+            }
             &.footer-versandarten{
                 ul{
-                    display: flex;
+                    /*display: flex;
                     flex-wrap: wrap;
-                    align-items: center;
+                    align-items: center;*/
                     li{
                         a{
                             display: block;
-                            height: 57px;
+                            /*height: 57px;
                             width: 57px;
                             background-position: center;
                             background-size: contain;
                             background-repeat: no-repeat;
-                            margin-right: 15px;
+                            margin-right: 15px;*/
                             &.standard-lieferung{
                                 background-image: url('../assets/img/standard-lieferung-white.svg');
                             }

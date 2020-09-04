@@ -20,7 +20,7 @@ https://sass-guidelin.es/#the-7-1-pattern
  * Vendors
  * ------- */
 //@import 'vendor/bootstrap';
-//@import 'vendor/tiny-slider';
+@import 'vendor/tiny-slider';
 //@import 'vendor/datepicker';
 
 /*
@@ -91,6 +91,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 
 @import 'plugin/merchant-finder';
 @import 'plugin/merchant-picker';
+@import 'plugin/blog';
 
 
 

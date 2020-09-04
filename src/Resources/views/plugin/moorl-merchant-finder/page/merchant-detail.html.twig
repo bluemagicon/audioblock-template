@@ -8,8 +8,13 @@
             {% block element_moorl_merchant_finder_detail_description %}
                 <div class="merchant-detail-content">
                     <h2>{{ merchant.company }}</h2>
-                    <p>Beratung & Service zählen zu den Stärken unserer First-Class Händler. Kommen Sie vorbei und lassen Sie sich kompetent über unsere Blockgeräte beraten.</p>
-                    <img class="siegel-fachhaendler" src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}" />
+
+                    {% if merchant.highlight %}
+                        <p>Beratung & Service zählen zu den Stärken unserer First-Class Händler. Kommen Sie vorbei und lassen Sie sich kompetent über unsere Blockgeräte beraten.</p>
+                        <img class="siegel-fachhaendler" src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}" />
+                    {% else %}
+                        <p>Kommen Sie vorbei und lassen Sie sich kompetent über unsere Blockgeräte beraten.</p>
+                    {% endif %}
                 </div>
                 <div class="merchant-detail-footer">
                     <div class="merchant-detail-footer-col">

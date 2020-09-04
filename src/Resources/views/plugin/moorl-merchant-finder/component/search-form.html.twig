@@ -9,7 +9,7 @@
     {% block element_moorl_merchant_finder_form_inner %}
         <div class="row form-row">
             {% block element_moorl_merchant_finder_form_inner_search %}
-                <div class="form-group col-12 col-sm-6">
+                <div class="form-group col-12 col-sm-3">
                     <input name="term" class="form-control" placeholder="Fachhändlername">
                 </div>
             {% endblock %}
@@ -26,7 +26,7 @@
                 {% endblock %}
             {% endif %}
             {% block element_moorl_merchant_finder_form_inner_zipcode %}
-                <div class="form-group col-12 col-sm-6">
+                <div class="form-group col-12 col-sm-3">
                     <div class="input-group">
                         {% if shopware.config.MoorlMerchantFinder.config.positionRequest %}
                             <div class="input-group-prepend">
@@ -45,7 +45,7 @@
                 </div>
             {% endblock %}
             {% block element_moorl_merchant_finder_form_inner_distance %}
-                <div class="form-group col-12 col-sm-6">
+                <div class="form-group col-12 col-sm-3">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">{{ "moorl-merchant-finder.radius"|trans }}</span>
@@ -98,7 +98,7 @@
                 {% endblock %}
             {% endif %}
             {% block element_moorl_merchant_finder_form_inner_submit %}
-                <div class="form-group col-12 col-sm-6">
+                <div class="form-group col-12 col-sm-3">
                     <button type="submit" class="btn btn-block btn-primary">
                         <i class="fas fa-search-location"></i>
                         {{ "moorl-merchant-finder.search"|trans }}

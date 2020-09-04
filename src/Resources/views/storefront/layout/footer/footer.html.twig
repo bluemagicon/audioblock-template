@@ -11,7 +11,7 @@
             </ul>
             <ul>
                 <li><a href="mailto:block@audioblock.com">block@audioblock.com</a></li>
-                <li><a href="tel:+49448492009010">+49 (0) 4484 - 920 090 10</a></li>
+                <li><a href="tel:+49448492009010">+49 (0) 4484 - 920 090 17</a></li>
             </ul>
         </div>
         <div class="footer-customers-menu footer-col col-md-4">
@@ -19,7 +19,7 @@
             <div class="two-col-menu-wrapper">
                 <ul>
                     <li><a href="{{ path('frontend.account.home.page') }}">Mein Konto</a></li>
-                    <li><a href="/Newsletter/">Newsletter</a></li>
+                    <li><a href="/Newsletter-Anmeldung/">Newsletter</a></li>
                     <li><a href="/Versandarten/">Versandarten</a></li>
                     <li><a href="/Zahlungsarten/">Zahlungsarten</a></li>
                     <li><a href="/Widerruf/">Widerruf</a></li>
@@ -42,32 +42,36 @@
             <h4>Zahlungsarten</h4>
             <ul>
                 <li>
-                    <a class="zahlungs-icon paypal" href="#"></a>
+                    <a class="zahlungs-icon paypal" href="/Zahlungsarten/"></a>
                 </li>
                 <li>
-                    <a class="zahlungs-icon klarna" href="#"></a>
+                    <a class="zahlungs-icon klarna" href="/Zahlungsarten/"></a>
                 </li>
                 <li>
-                    <a class="zahlungs-icon sepa" href="#"></a>
+                    <a class="zahlungs-icon sofort" href="/Zahlungsarten/"></a>
                 </li>
                 <li>
-                    <a class="zahlungs-icon kreditkarte" href="#"></a>
+                    <a class="zahlungs-icon kreditkarte" href="/Zahlungsarten/"></a>
                 </li>
                 <li>
-                    <a class="zahlungs-icon master" href="#"></a>
+                    <a class="zahlungs-icon master" href="/Zahlungsarten/"></a>
                 </li>
                 <li>
-                    <a class="zahlungs-icon vorkasse" href="#"></a>
+                    <a class="zahlungs-icon vorkasse" href="/Zahlungsarten/"></a>
                 </li>
             </ul>
         </div>
-        <div class="footer-sicherheit footer-col col-md-4">
-            <h4>Sicherheit</h4>
+        <div class="footer-versand footer-col col-md-4">
+            <h4>Versand</h4>
+            <img src="{{ asset('assets/img/dhl-go-green.png', '@Audioblock') }}">
         </div>
         <div class="footer-versandarten footer-col col-md-4">
             <h4>Versandarten</h4>
             <ul>
-                <li>
+                <li><a href="/Versandarten/">Click & Deliver</a></li>
+                <li><a href="/Versandarten/">Click & Collect</a></li>
+                <li><a href="/Versandarten/">Standard-Versand (DHL)</a></li>
+                <!--<li>
                     <a class="standard-lieferung" href="#"></a>
                 </li>
                 <li>
@@ -75,7 +79,7 @@
                 </li>
                 <li>
                     <a class="click-and-collect" href="#"></a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
