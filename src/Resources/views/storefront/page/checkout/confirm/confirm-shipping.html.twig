@@ -30,7 +30,7 @@
                                                    name="shippingMethodId"
                                                    value="{{ shipping.id }}"
                                                    {% if shipping.id is same as(context.shippingMethod.id) %}checked="checked"{% endif %}
-                                                   class="custom-control-input shipping-method-input">
+                                                   class="custom-control-input shipping-method-input" onclick="$('#confirmShippingForm').submit()">
                                         {% endblock %}
 
                                         {% block page_checkout_confirm_shipping_form_label %}
@@ -70,21 +70,6 @@
                     </div>
                 {% endfor %}
             </div>
-        {% endblock %}
-
-        {% block page_checkout_confirm_shipping_form_submit %}
-            <button class="btn btn-primary" type="submit">
-                {{ "checkout.confirmChangePaymentShippingSave"|trans|sw_sanitize }}
-            </button>
-        {% endblock %}
-
-        {% block page_checkout_confirm_shipping_cancel %}
-            <button class="btn btn-light"
-                    type="button"
-                    data-dismiss="modal"
-                    aria-label="Close">
-                {{ "checkout.confirmChangePaymentShippingCancel"|trans|sw_sanitize }}
-            </button>
         {% endblock %}
     </form>
 {% endblock %}
