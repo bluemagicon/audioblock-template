@@ -72,7 +72,7 @@
     max-width: 800px;
     margin: 0 auto;
     .cms-element-text {
-        h1{
+        h1, h2{
             font-size: 3rem;
             margin-bottom: 30px;
             position: relative;
@@ -84,7 +84,7 @@
                 font-style: normal;
             }
         }
-        h1:after{
+        h1:after, h2:after{
             content: "";
             position: absolute;
             background: $primary-color;

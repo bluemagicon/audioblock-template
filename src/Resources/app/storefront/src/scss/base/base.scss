@@ -56,7 +56,8 @@ a{
 }
 .bg-gray{
     background: $light-gray;
-    .cms-block-text-hero .cms-element-text h1 i{
+    .cms-block-text-hero .cms-element-text h1 i,
+    .cms-block-text-hero .cms-element-text h2 i{
         background: $light-gray;
     }
 }

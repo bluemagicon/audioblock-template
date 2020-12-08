@@ -5,9 +5,31 @@
     scrollToElement: true
 } %}
 
+{% set remoteClickOptions2 = {
+    selector: "#tests-tab",
+    scrollToElement: true
+} %}
+
 
 {% block page_product_detail_price %}
     <div class="headline-wrapper">
+        {% if page.product.customFields.custom_tests_grafik_1 != "" %}
+
+            <a data-toggle="tab"
+               class="img-wrapper headline-wrapper-test"
+               data-offcanvas-tabs="true"
+               data-remote-click="true"
+               data-remote-click-options='{{ remoteClickOptions2|json_encode }}'
+               href="#tests-tab-desc"
+               aria-controls="tests-tab-desc">
+                {% set banner1Id = page.product.customFields.custom_tests_grafik_1 %}
+                {% set mediaCollection = searchMedia([banner1Id], context.context) %}
+                {% set banner1 = mediaCollection.get(banner1Id) %}
+                <img src="{{ banner1.url }}" alt="" />
+            </a>
+
+
+        {% endif %}
         <h1 class="product-detail-name"
             itemprop="name">
             {{ page.product.translated.name }}
