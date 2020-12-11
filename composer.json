@@ -2,7 +2,13 @@
   "name": "dw/audioblock-template",
   "description": "Template Theme for Audioblock GmbH",
   "type": "shopware-platform-plugin",
-  "license": "MIT",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Deux Websolutions"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Audioblock\\": "src/"
@@ -11,8 +17,8 @@
   "extra": {
     "shopware-plugin-class": "Audioblock\\Audioblock",
     "label": {
-      "de-DE": "Theme Audioblock plugin",
-      "en-GB": "Theme Audioblock plugin"
+      "de-DE": "Theme Audioblock",
+      "en-GB": "Theme Audioblock"
     }
   }
 }

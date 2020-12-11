@@ -103,8 +103,11 @@
     <div class="mt-2">
         {% block element_moorl_merchant_finder_result_button_cms %}
             {% if shopware.config.MoorlMerchantFinder.config.detailPage == 'popup' %}
-                <a href="javascript:" data-trigger="#merchant_finder_more"
-                   data-url="{{ path('moorl.merchant-finder.merchant', {'merchantId':merchant.id}) }}"
+                <a href="javascript:"
+                   data-moorl-foundation-modal="{{ path('moorl.merchant-finder.merchant.modal', {'merchantId': merchant.id}) }}"
+                   class="button-1 button-small button-info">{{ "moorl-merchant-finder.more"|trans }}</a>
+            {% elseif shopware.config.MoorlMerchantFinder.config.detailPage == 'page' %}
+                <a href="{{ merchant.seoUrl }}"
                    class="button-1 button-small button-info">{{ "moorl-merchant-finder.more"|trans }}</a>
             {% endif %}
         {% endblock %}
