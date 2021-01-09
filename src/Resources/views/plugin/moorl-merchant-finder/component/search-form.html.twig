@@ -1,19 +1,29 @@
 {% sw_extends '@Storefront/plugin/moorl-merchant-finder/component/search-form.html.twig' %}
 
 {% block element_moorl_merchant_finder_form_inner_additional %}
-    {% if shopware.config.MoorlMerchantFinder.config.searchRules %}
-        {% for rule in shopware.config.MoorlMerchantFinder.config.searchRules %}
-            <div class="form-group d-inline-block mr-4">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox"
-                           class="custom-control-input"
-                           id="{{ rule }}Check"
-                           name="rules[]"
-                           value="{{ rule }}"
-                           {% if rule == 'isHighlighted' %}checked{% endif %}>
-                    <label class="custom-control-label" for="{{ rule }}Check">{{ "moorl-merchant-finder.searchRules.#{rule}"|trans }}</label>
+    {% if element.config.initiator.value == 'merchant-picker' %}
+        {% if shopware.config.MoorlMerchantPicker.config.searchRules %}
+            {% for rule in shopware.config.MoorlMerchantFinder.config.searchRules %}
+                <input type="hidden"
+                       name="rules[]"
+                       value="{{ rule }}">
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        {% if shopware.config.MoorlMerchantFinder.config.searchRules %}
+            {% for rule in shopware.config.MoorlMerchantFinder.config.searchRules %}
+                <div class="form-group d-inline-block mr-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox"
+                               class="custom-control-input"
+                               id="{{ rule }}Check"
+                               name="rules[]"
+                               value="{{ rule }}"
+                               {% if rule == 'isHighlighted' %}checked{% endif %}>
+                        <label class="custom-control-label" for="{{ rule }}Check">{{ "moorl-merchant-finder.searchRules.#{rule}"|trans }}</label>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     {% endif %}
 {% endblock %}
