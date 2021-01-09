@@ -3,7 +3,7 @@
 {% block element_moorl_merchant_finder_form_inner_additional %}
     {% if element.config.initiator.value == 'merchant-picker' %}
         {% if shopware.config.MoorlMerchantPicker.config.searchRules %}
-            {% for rule in shopware.config.MoorlMerchantFinder.config.searchRules %}
+            {% for rule in shopware.config.MoorlMerchantPicker.config.searchRules %}
                 <input type="hidden"
                        name="rules[]"
                        value="{{ rule }}">
