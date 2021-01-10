@@ -2,16 +2,18 @@
 
 {% block element_moorl_merchant_finder_form_inner_additional_default %}
     {% if shopware.config.MoorlMerchantFinder.config.searchRules %}
-        <div class="form-group d-inline-block mr-4">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox"
-                       class="custom-control-input"
-                       id="{{ rule }}Check"
-                       name="rules[]"
-                       value="{{ rule }}"
-                       {% if rule == 'isHighlighted' %}checked{% endif %}>
-                <label class="custom-control-label" for="{{ rule }}Check">{{ "moorl-merchant-finder.searchRules.#{rule}"|trans }}</label>
+        {% for rule in shopware.config.MoorlMerchantFinder.config.searchRules %}
+            <div class="form-group d-inline-block mr-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox"
+                           class="custom-control-input"
+                           id="{{ rule }}Check"
+                           name="rules[]"
+                           value="{{ rule }}"
+                           {% if rule == 'isHighlighted' %}checked{% endif %}>
+                    <label class="custom-control-label" for="{{ rule }}Check">{{ "moorl-merchant-finder.searchRules.#{rule}"|trans }}</label>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     {% endif %}
 {% endblock %}
