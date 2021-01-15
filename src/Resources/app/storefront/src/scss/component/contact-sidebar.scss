@@ -2,13 +2,20 @@
     background: #000;
     position: fixed;
     top: 250px;
-    right: -254px;
+    right: -282px;
     color: #fff;
-    padding: 20px 15px 20px 20px;
+    padding: 20px 35px 20px 35px;
+
     z-index: 999;
     transition: all .5s;
+    hr{
+        height: 1px;
+        border: 0;
+        background: #5f5f5f;
+    }
     ul{
         margin-bottom: 15px;
+        padding: 0px;
         list-style: none;
         position: relative;
         li{
