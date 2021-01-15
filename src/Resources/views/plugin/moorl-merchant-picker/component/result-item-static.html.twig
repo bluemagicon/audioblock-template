@@ -1,7 +1,10 @@
-<input id="radio-{{ merchant.id }}" class="d-none" type="radio" name="merchant" value="{{ merchant.id }}">
-
-<label for="radio-{{ merchant.id }}" class="list-group-item moorl-merchant-finder-result-item"
-       style="background-image:url({{ merchant.media.url }})" id="{{ merchant.id }}">
+<li click="avascript:"
+    data-location-lat="{{ merchant.locationLat }}"
+    data-location-lon="{{ merchant.locationLon }}"
+    data-item="{{ merchant.id }}"
+    class="merchant-{{ merchant.id }} list-group-item moorl-merchant-finder-result-item"
+    style="background-image:url({{ merchant.media.url }})"
+    id="">
     <div class="row form-row">
         <div class="col">
             {% block element_moorl_merchant_finder_result_title %}
@@ -91,4 +94,4 @@
         <img class="siegel-fachhaendler"
              src="{{ asset('assets/img/audioblock-first-class-siegel.png', '@Audioblock') }}">
     {% endif %}
-</label>
+</li>
