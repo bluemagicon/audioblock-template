@@ -4,6 +4,11 @@
     <div class="row product-detail-main">
         {% block page_product_detail_media %}
             <div class="col-lg-7 product-detail-media">
+                {% if page.product.calculatedPrice.unitPrice >= 300 %}
+                    <div class="garantie-teaser-detail-media img-wrapper">
+                        <img src="{{ asset('assets/img/Garantie_Stoerer.svg', '@Audioblock') }}" />
+                    </div>
+                {% endif %}
                 {% if page.product.media %}
                     {% sw_include '@Storefront/storefront/element/cms-element-image-gallery.html.twig' with {
                         'mediaItems': mediaItems,

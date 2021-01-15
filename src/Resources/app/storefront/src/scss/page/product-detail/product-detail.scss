@@ -154,6 +154,16 @@
         }
     }
 }
+.product-detail-media{
+    position: relative;
+    .garantie-teaser-detail-media{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 160px;
+        z-index: 1;
+    }
+}
 
 @media(max-width: 992px){
     .product-detail{
@@ -165,6 +175,15 @@
                     margin: 0;
                 }
             }
+        }
+    }
+}
+@media(max-width: 576px){
+    .product-detail-media{
+        .garantie-teaser-detail-media{
+            top: 5px;
+            left: 5px;
+            width: 110px;
         }
     }
 }
