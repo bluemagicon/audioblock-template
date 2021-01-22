@@ -61,3 +61,15 @@ a{
         background: $light-gray;
     }
 }
+.tel-support-teaser{
+    background: #e5005b;
+    text-align: center;
+    color: #fff;
+    padding: 8px 0;
+}
+@media(max-width: 576px){
+    .tel-support-teaser{
+        font-size: 13px;
+        padding: 8px 5%;
+    }
+}

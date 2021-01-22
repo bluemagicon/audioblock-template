@@ -5,6 +5,8 @@
 
      {{ parent() }}
 
+
+
      <div class="contact-sidebar">
          <ul class="contact">
              <li><strong>Wir beraten Sie gerne!</strong></li>
@@ -39,3 +41,10 @@
      </div>
      <a href="tel:+49448492009010" class="contact-sidebar-link"></a>
  {% endblock %}
+
+{% block base_navigation %}
+    {{ parent() }}
+    <div class="tel-support-teaser">
+        +++ Aufgrund der aktuellen Situation, ist unser telefonischer Support ab sofort <strong>MO - FR von 8:30 bis 13:00</strong> persönlich für Sie erreichbar! +++
+    </div>
+{% endblock %}
